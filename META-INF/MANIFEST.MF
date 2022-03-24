@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: BA_Test_PlugIN
+Bundle-SymbolicName: BA_Test_PlugIN
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: BA.Test.PlugIN
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Require-Bundle: org.palladiosimulator.pcm;bundle-version="5.1.0"
