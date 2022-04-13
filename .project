@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>BA_Test_PlugIN</name>
+	<name>org.palladiosimulator.kubernetes</name>
 	<comment></comment>
 	<projects>
 	</projects>

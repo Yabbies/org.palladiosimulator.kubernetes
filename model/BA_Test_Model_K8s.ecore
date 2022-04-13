@@ -1,38 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="kubernetesModel">
-  <eClassifiers xsi:type="ecore:EClass" name="Container1" eSuperTypes="../../org.palladiosimulator.pcm/model/pcm.ecore#//repository/CompositeComponent">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="request"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requestField" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Request">
-    <eStructuralFeatures xsi:type="ecore:EReference"/>
-  </eClassifiers>
-  <eSubpackages name="system"/>
-  <eSubpackages name="resourceenvironment">
-    <eClassifiers xsi:type="ecore:EClass" name="KubernetesNode" eSuperTypes="../../org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ResourceContainer"/>
-    <eClassifiers xsi:type="ecore:EClass" name="WorkerNode" eSuperTypes="#//resourceenvironment/KubernetesNode"/>
-    <eClassifiers xsi:type="ecore:EClass" name="MasterNode" eSuperTypes="#//resourceenvironment/KubernetesNode"/>
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="kubernetesModel" nsURI="org.palladiosimulator.kubernetesModel"
+    nsPrefix="k8smodel">
+  <eSubpackages name="resourceenvironment" nsURI="org.palladiosimulator.kubernetesModel.resourceenvironment"
+      nsPrefix="resenv">
+    <eClassifiers xsi:type="ecore:EClass" name="KubernetesNode" eSuperTypes="../../org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ResourceContainer">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isMasterNode" lowerBound="1"
+          eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+          defaultValueLiteral="false"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="memory" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="cpu" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Deployment">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="replicas" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+          defaultValueLiteral="1"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="PodImageReference" eType="#//repository/Pod"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="AllocatedPods" upperBound="-1"
+          eType="#//resourceenvironment/RunningPodNestedResourceContainer" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RunningPodNestedResourceContainer"
+        eSuperTypes="../../org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ResourceContainer">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="selectorDeploymentReference"
+          eType="#//resourceenvironment/Deployment" containment="true"/>
+    </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="repository">
-    <eClassifiers xsi:type="ecore:EClass" name="Container" eSuperTypes="../../org.palladiosimulator.pcm/model/pcm.ecore#//repository/CompositeComponent"/>
+  <eSubpackages name="repository" nsURI="org.palladiosimulator.kubernetesModel.repository"
+      nsPrefix="repo">
+    <eClassifiers xsi:type="ecore:EClass" name="Container" eSuperTypes="../../org.palladiosimulator.pcm/model/pcm.ecore#//repository/CompositeComponent">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="standardLimit" eType="#//k8sconcepts/K8sStandardRequestLimit"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="standardRequest" eType="#//k8sconcepts/K8sStandardRequestLimit"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="containerMemoryRequest"
+          eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBigInteger"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="containerMemoryLimit"
+          eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBigInteger"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="containerCPURequest"
+          eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="containerCPULimit" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Pod" eSuperTypes="../../org.palladiosimulator.pcm/model/pcm.ecore#//repository/CompositeComponent">
       <eStructuralFeatures xsi:type="ecore:EReference" name="Containers" upperBound="-1"
           eType="#//repository/Container"/>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="allocation"/>
-  <eSubpackages name="kubernetesconcepts">
-    <eClassifiers xsi:type="ecore:EClass" name="Deployment"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Request">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="CPURequest" lowerBound="1"
-          eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ProcessingResourceSpecification"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="MemoryRequest" eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/HDDProcessingResourceSpecification"/>
+  <eSubpackages name="k8sconcepts" nsURI="org.palladiosimulator.kubernetesModel.k8sconcepts"
+      nsPrefix="k8s">
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractK8sRequestLimit" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="K8sStandardRequestLimit" eSuperTypes="#//k8sconcepts/AbstractK8sRequestLimit">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="cpu" upperBound="-1"
+          eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="memory" upperBound="-1"
+          eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Limit">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="CPULimit" lowerBound="1"
-          eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ProcessingResourceSpecification"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="MemoryLimit" eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/HDDProcessingResourceSpecification"/>
+    <eClassifiers xsi:type="ecore:EClass" name="K8sAdditionalRequestLimit" eSuperTypes="#//k8sconcepts/AbstractK8sRequestLimit">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="specification" upperBound="-1"
+          eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>
