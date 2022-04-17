@@ -271,7 +271,7 @@ public class ResourceenvironmentPackageImpl extends EPackageImpl implements Reso
         // Initialize classes and features; add operations and parameters
         initEClass(kubernetesNodeEClass, KubernetesNode.class, "KubernetesNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getKubernetesNode_IsMasterNode(), theEcorePackage.getEBoolean(), "isMasterNode", "false", 1, 1, KubernetesNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEAttribute(getKubernetesNode_Memory(), theEcorePackage.getEInt(), "memory", null, 0, 1, KubernetesNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getKubernetesNode_Memory(), theEcorePackage.getEBigInteger(), "memory", null, 0, 1, KubernetesNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getKubernetesNode_Cpu(), theEcorePackage.getEInt(), "cpu", null, 0, 1, KubernetesNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(runningPodNestedResourceContainerEClass, RunningPodNestedResourceContainer.class, "RunningPodNestedResourceContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

@@ -113,22 +113,13 @@ public interface K8sconceptsPackage extends EPackage {
     int DEPLOYMENT__ALLOCATED_PODS = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DEPLOYMENT__NAME = EntityPackage.ENTITY_FEATURE_COUNT + 3;
-
-    /**
      * The number of structural features of the '<em>Deployment</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DEPLOYMENT_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 4;
+    int DEPLOYMENT_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 3;
 
     /**
      * The meta object id for the '{@link kubernetesModel.k8sconcepts.impl.AbstractK8sRequestLimitImpl <em>Abstract K8s Request Limit</em>}' class.
@@ -196,7 +187,7 @@ public interface K8sconceptsPackage extends EPackage {
     int K8S_STANDARD_REQUEST_LIMIT__ENTITY_NAME = ABSTRACT_K8S_REQUEST_LIMIT__ENTITY_NAME;
 
     /**
-     * The feature id for the '<em><b>Cpu</b></em>' attribute list.
+     * The feature id for the '<em><b>Cpu</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -205,7 +196,7 @@ public interface K8sconceptsPackage extends EPackage {
     int K8S_STANDARD_REQUEST_LIMIT__CPU = ABSTRACT_K8S_REQUEST_LIMIT_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Memory</b></em>' attribute list.
+     * The feature id for the '<em><b>Memory</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -251,7 +242,7 @@ public interface K8sconceptsPackage extends EPackage {
     int K8S_ADDITIONAL_REQUEST_LIMIT__ENTITY_NAME = ABSTRACT_K8S_REQUEST_LIMIT__ENTITY_NAME;
 
     /**
-     * The feature id for the '<em><b>Specification</b></em>' attribute list.
+     * The feature id for the '<em><b>Specification</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -369,17 +360,6 @@ public interface K8sconceptsPackage extends EPackage {
     EReference getDeployment_AllocatedPods();
 
     /**
-     * Returns the meta object for the attribute '{@link kubernetesModel.k8sconcepts.Deployment#getName <em>Name</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Name</em>'.
-     * @see kubernetesModel.k8sconcepts.Deployment#getName()
-     * @see #getDeployment()
-     * @generated
-     */
-    EAttribute getDeployment_Name();
-
-    /**
      * Returns the meta object for class '{@link kubernetesModel.k8sconcepts.AbstractK8sRequestLimit <em>Abstract K8s Request Limit</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -400,10 +380,10 @@ public interface K8sconceptsPackage extends EPackage {
     EClass getK8sStandardRequestLimit();
 
     /**
-     * Returns the meta object for the attribute list '{@link kubernetesModel.k8sconcepts.K8sStandardRequestLimit#getCpu <em>Cpu</em>}'.
+     * Returns the meta object for the attribute '{@link kubernetesModel.k8sconcepts.K8sStandardRequestLimit#getCpu <em>Cpu</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute list '<em>Cpu</em>'.
+     * @return the meta object for the attribute '<em>Cpu</em>'.
      * @see kubernetesModel.k8sconcepts.K8sStandardRequestLimit#getCpu()
      * @see #getK8sStandardRequestLimit()
      * @generated
@@ -411,10 +391,10 @@ public interface K8sconceptsPackage extends EPackage {
     EAttribute getK8sStandardRequestLimit_Cpu();
 
     /**
-     * Returns the meta object for the attribute list '{@link kubernetesModel.k8sconcepts.K8sStandardRequestLimit#getMemory <em>Memory</em>}'.
+     * Returns the meta object for the attribute '{@link kubernetesModel.k8sconcepts.K8sStandardRequestLimit#getMemory <em>Memory</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute list '<em>Memory</em>'.
+     * @return the meta object for the attribute '<em>Memory</em>'.
      * @see kubernetesModel.k8sconcepts.K8sStandardRequestLimit#getMemory()
      * @see #getK8sStandardRequestLimit()
      * @generated
@@ -432,10 +412,10 @@ public interface K8sconceptsPackage extends EPackage {
     EClass getK8sAdditionalRequestLimit();
 
     /**
-     * Returns the meta object for the attribute list '{@link kubernetesModel.k8sconcepts.K8sAdditionalRequestLimit#getSpecification <em>Specification</em>}'.
+     * Returns the meta object for the attribute '{@link kubernetesModel.k8sconcepts.K8sAdditionalRequestLimit#getSpecification <em>Specification</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute list '<em>Specification</em>'.
+     * @return the meta object for the attribute '<em>Specification</em>'.
      * @see kubernetesModel.k8sconcepts.K8sAdditionalRequestLimit#getSpecification()
      * @see #getK8sAdditionalRequestLimit()
      * @generated
@@ -541,14 +521,6 @@ public interface K8sconceptsPackage extends EPackage {
         EReference DEPLOYMENT__ALLOCATED_PODS = eINSTANCE.getDeployment_AllocatedPods();
 
         /**
-         * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EAttribute DEPLOYMENT__NAME = eINSTANCE.getDeployment_Name();
-
-        /**
          * The meta object literal for the '{@link kubernetesModel.k8sconcepts.impl.AbstractK8sRequestLimitImpl <em>Abstract K8s Request Limit</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
@@ -569,7 +541,7 @@ public interface K8sconceptsPackage extends EPackage {
         EClass K8S_STANDARD_REQUEST_LIMIT = eINSTANCE.getK8sStandardRequestLimit();
 
         /**
-         * The meta object literal for the '<em><b>Cpu</b></em>' attribute list feature.
+         * The meta object literal for the '<em><b>Cpu</b></em>' attribute feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
@@ -577,7 +549,7 @@ public interface K8sconceptsPackage extends EPackage {
         EAttribute K8S_STANDARD_REQUEST_LIMIT__CPU = eINSTANCE.getK8sStandardRequestLimit_Cpu();
 
         /**
-         * The meta object literal for the '<em><b>Memory</b></em>' attribute list feature.
+         * The meta object literal for the '<em><b>Memory</b></em>' attribute feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
@@ -595,7 +567,7 @@ public interface K8sconceptsPackage extends EPackage {
         EClass K8S_ADDITIONAL_REQUEST_LIMIT = eINSTANCE.getK8sAdditionalRequestLimit();
 
         /**
-         * The meta object literal for the '<em><b>Specification</b></em>' attribute list feature.
+         * The meta object literal for the '<em><b>Specification</b></em>' attribute feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated

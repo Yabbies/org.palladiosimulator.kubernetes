@@ -2,12 +2,8 @@
  */
 package kubernetesModel.k8sconcepts.impl;
 
-import java.util.Collection;
-
 import kubernetesModel.k8sconcepts.K8sAdditionalRequestLimit;
 import kubernetesModel.k8sconcepts.K8sconceptsPackage;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -25,6 +21,16 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class K8sAdditionalRequestLimitImpl extends AbstractK8sRequestLimitImpl implements K8sAdditionalRequestLimit {
+    /**
+     * The default value of the '{@link #getSpecification() <em>Specification</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getSpecification()
+     * @generated
+     * @ordered
+     */
+    protected static final String SPECIFICATION_EDEFAULT = null;
+
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -49,9 +55,17 @@ public class K8sAdditionalRequestLimitImpl extends AbstractK8sRequestLimitImpl i
      * <!-- end-user-doc -->
      * @generated
      */
-    @SuppressWarnings("unchecked")
-    public EList<String> getSpecification() {
-        return (EList<String>)eDynamicGet(K8sconceptsPackage.K8S_ADDITIONAL_REQUEST_LIMIT__SPECIFICATION, K8sconceptsPackage.Literals.K8S_ADDITIONAL_REQUEST_LIMIT__SPECIFICATION, true, true);
+    public String getSpecification() {
+        return (String)eDynamicGet(K8sconceptsPackage.K8S_ADDITIONAL_REQUEST_LIMIT__SPECIFICATION, K8sconceptsPackage.Literals.K8S_ADDITIONAL_REQUEST_LIMIT__SPECIFICATION, true, true);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setSpecification(String newSpecification) {
+        eDynamicSet(K8sconceptsPackage.K8S_ADDITIONAL_REQUEST_LIMIT__SPECIFICATION, K8sconceptsPackage.Literals.K8S_ADDITIONAL_REQUEST_LIMIT__SPECIFICATION, newSpecification);
     }
 
     /**
@@ -73,13 +87,11 @@ public class K8sAdditionalRequestLimitImpl extends AbstractK8sRequestLimitImpl i
      * <!-- end-user-doc -->
      * @generated
      */
-    @SuppressWarnings("unchecked")
     @Override
     public void eSet(int featureID, Object newValue) {
         switch (featureID) {
             case K8sconceptsPackage.K8S_ADDITIONAL_REQUEST_LIMIT__SPECIFICATION:
-                getSpecification().clear();
-                getSpecification().addAll((Collection<? extends String>)newValue);
+                setSpecification((String)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -94,7 +106,7 @@ public class K8sAdditionalRequestLimitImpl extends AbstractK8sRequestLimitImpl i
     public void eUnset(int featureID) {
         switch (featureID) {
             case K8sconceptsPackage.K8S_ADDITIONAL_REQUEST_LIMIT__SPECIFICATION:
-                getSpecification().clear();
+                setSpecification(SPECIFICATION_EDEFAULT);
                 return;
         }
         super.eUnset(featureID);
@@ -109,7 +121,7 @@ public class K8sAdditionalRequestLimitImpl extends AbstractK8sRequestLimitImpl i
     public boolean eIsSet(int featureID) {
         switch (featureID) {
             case K8sconceptsPackage.K8S_ADDITIONAL_REQUEST_LIMIT__SPECIFICATION:
-                return !getSpecification().isEmpty();
+                return SPECIFICATION_EDEFAULT == null ? getSpecification() != null : !SPECIFICATION_EDEFAULT.equals(getSpecification());
         }
         return super.eIsSet(featureID);
     }

@@ -22,7 +22,6 @@ import org.palladiosimulator.pcm.core.entity.Entity;
  *   <li>{@link kubernetesModel.k8sconcepts.Deployment#getReplicas <em>Replicas</em>}</li>
  *   <li>{@link kubernetesModel.k8sconcepts.Deployment#getPodReference <em>Pod Reference</em>}</li>
  *   <li>{@link kubernetesModel.k8sconcepts.Deployment#getAllocatedPods <em>Allocated Pods</em>}</li>
- *   <li>{@link kubernetesModel.k8sconcepts.Deployment#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see kubernetesModel.k8sconcepts.K8sconceptsPackage#getDeployment()
@@ -86,27 +85,5 @@ public interface Deployment extends Entity {
      * @generated
      */
     EList<RunningPodNestedResourceContainer> getAllocatedPods();
-
-    /**
-     * Returns the value of the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Name</em>' attribute.
-     * @see #setName(String)
-     * @see kubernetesModel.k8sconcepts.K8sconceptsPackage#getDeployment_Name()
-     * @model
-     * @generated
-     */
-    String getName();
-
-    /**
-     * Sets the value of the '{@link kubernetesModel.k8sconcepts.Deployment#getName <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Name</em>' attribute.
-     * @see #getName()
-     * @generated
-     */
-    void setName(String value);
 
 } // Deployment

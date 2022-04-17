@@ -220,7 +220,7 @@ public class SystemPackageImpl extends EPackageImpl implements SystemPackage {
 
         // Initialize classes and features; add operations and parameters
         initEClass(deploymentAssemblyEClass, DeploymentAssembly.class, "DeploymentAssembly", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getDeploymentAssembly_Deployment(), theK8sconceptsPackage.getDeployment(), null, "Deployment", null, 0, 1, DeploymentAssembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getDeploymentAssembly_Deployment(), theK8sconceptsPackage.getDeployment(), null, "deployment", null, 0, 1, DeploymentAssembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         // Create resource
         createResource(eNS_URI);

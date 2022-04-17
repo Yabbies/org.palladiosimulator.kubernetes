@@ -216,15 +216,6 @@ public class K8sconceptsPackageImpl extends EPackageImpl implements K8sconceptsP
      * <!-- end-user-doc -->
      * @generated
      */
-    public EAttribute getDeployment_Name() {
-        return (EAttribute)deploymentEClass.getEStructuralFeatures().get(3);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     public EClass getAbstractK8sRequestLimit() {
         return abstractK8sRequestLimitEClass;
     }
@@ -342,7 +333,6 @@ public class K8sconceptsPackageImpl extends EPackageImpl implements K8sconceptsP
         createEAttribute(deploymentEClass, DEPLOYMENT__REPLICAS);
         createEReference(deploymentEClass, DEPLOYMENT__POD_REFERENCE);
         createEReference(deploymentEClass, DEPLOYMENT__ALLOCATED_PODS);
-        createEAttribute(deploymentEClass, DEPLOYMENT__NAME);
 
         abstractK8sRequestLimitEClass = createEClass(ABSTRACT_K8S_REQUEST_LIMIT);
 
@@ -402,24 +392,23 @@ public class K8sconceptsPackageImpl extends EPackageImpl implements K8sconceptsP
         // Initialize classes and features; add operations and parameters
         initEClass(deploymentEClass, Deployment.class, "Deployment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getDeployment_Replicas(), theEcorePackage.getEInt(), "replicas", "1", 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEReference(getDeployment_PodReference(), theRepositoryPackage.getPod(), null, "PodReference", null, 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEReference(getDeployment_AllocatedPods(), theResourceenvironmentPackage.getRunningPodNestedResourceContainer(), null, "AllocatedPods", null, 0, -1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEAttribute(getDeployment_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getDeployment_PodReference(), theRepositoryPackage.getPod(), null, "podReference", null, 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getDeployment_AllocatedPods(), theResourceenvironmentPackage.getRunningPodNestedResourceContainer(), null, "allocatedPods", null, 0, -1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(abstractK8sRequestLimitEClass, AbstractK8sRequestLimit.class, "AbstractK8sRequestLimit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
         initEClass(k8sStandardRequestLimitEClass, K8sStandardRequestLimit.class, "K8sStandardRequestLimit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getK8sStandardRequestLimit_Cpu(), theEcorePackage.getEInt(), "cpu", null, 0, -1, K8sStandardRequestLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEAttribute(getK8sStandardRequestLimit_Memory(), theEcorePackage.getEInt(), "memory", null, 0, -1, K8sStandardRequestLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getK8sStandardRequestLimit_Cpu(), theEcorePackage.getEInt(), "cpu", null, 0, 1, K8sStandardRequestLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getK8sStandardRequestLimit_Memory(), theEcorePackage.getEBigInteger(), "memory", null, 0, 1, K8sStandardRequestLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(k8sAdditionalRequestLimitEClass, K8sAdditionalRequestLimit.class, "K8sAdditionalRequestLimit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getK8sAdditionalRequestLimit_Specification(), theEcorePackage.getEString(), "specification", null, 0, -1, K8sAdditionalRequestLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getK8sAdditionalRequestLimit_Specification(), theEcorePackage.getEString(), "specification", null, 0, 1, K8sAdditionalRequestLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(requestsLimitsRepositoryEClass, RequestsLimitsRepository.class, "RequestsLimitsRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getRequestsLimitsRepository_RequestsLimitsRepo(), this.getAbstractK8sRequestLimit(), null, "requestsLimitsRepo", null, 0, -1, RequestsLimitsRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
         initEClass(deploymentsEClass, Deployments.class, "Deployments", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getDeployments_DeploymentInstances(), this.getDeployment(), null, "DeploymentInstances", null, 0, -1, Deployments.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getDeployments_DeploymentInstances(), this.getDeployment(), null, "deploymentInstances", null, 0, -1, Deployments.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         // Create resource
         createResource(eNS_URI);

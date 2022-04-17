@@ -33,7 +33,6 @@ import org.palladiosimulator.pcm.core.entity.impl.EntityImpl;
  *   <li>{@link kubernetesModel.k8sconcepts.impl.DeploymentImpl#getReplicas <em>Replicas</em>}</li>
  *   <li>{@link kubernetesModel.k8sconcepts.impl.DeploymentImpl#getPodReference <em>Pod Reference</em>}</li>
  *   <li>{@link kubernetesModel.k8sconcepts.impl.DeploymentImpl#getAllocatedPods <em>Allocated Pods</em>}</li>
- *   <li>{@link kubernetesModel.k8sconcepts.impl.DeploymentImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,16 +47,6 @@ public class DeploymentImpl extends EntityImpl implements Deployment {
      * @ordered
      */
     protected static final int REPLICAS_EDEFAULT = 1;
-
-    /**
-     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
-    protected static final String NAME_EDEFAULT = null;
 
     /**
      * <!-- begin-user-doc -->
@@ -138,24 +127,6 @@ public class DeploymentImpl extends EntityImpl implements Deployment {
      * <!-- end-user-doc -->
      * @generated
      */
-    public String getName() {
-        return (String)eDynamicGet(K8sconceptsPackage.DEPLOYMENT__NAME, K8sconceptsPackage.Literals.DEPLOYMENT__NAME, true, true);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public void setName(String newName) {
-        eDynamicSet(K8sconceptsPackage.DEPLOYMENT__NAME, K8sconceptsPackage.Literals.DEPLOYMENT__NAME, newName);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
@@ -180,8 +151,6 @@ public class DeploymentImpl extends EntityImpl implements Deployment {
                 return basicGetPodReference();
             case K8sconceptsPackage.DEPLOYMENT__ALLOCATED_PODS:
                 return getAllocatedPods();
-            case K8sconceptsPackage.DEPLOYMENT__NAME:
-                return getName();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -205,9 +174,6 @@ public class DeploymentImpl extends EntityImpl implements Deployment {
                 getAllocatedPods().clear();
                 getAllocatedPods().addAll((Collection<? extends RunningPodNestedResourceContainer>)newValue);
                 return;
-            case K8sconceptsPackage.DEPLOYMENT__NAME:
-                setName((String)newValue);
-                return;
         }
         super.eSet(featureID, newValue);
     }
@@ -229,9 +195,6 @@ public class DeploymentImpl extends EntityImpl implements Deployment {
             case K8sconceptsPackage.DEPLOYMENT__ALLOCATED_PODS:
                 getAllocatedPods().clear();
                 return;
-            case K8sconceptsPackage.DEPLOYMENT__NAME:
-                setName(NAME_EDEFAULT);
-                return;
         }
         super.eUnset(featureID);
     }
@@ -250,8 +213,6 @@ public class DeploymentImpl extends EntityImpl implements Deployment {
                 return basicGetPodReference() != null;
             case K8sconceptsPackage.DEPLOYMENT__ALLOCATED_PODS:
                 return !getAllocatedPods().isEmpty();
-            case K8sconceptsPackage.DEPLOYMENT__NAME:
-                return NAME_EDEFAULT == null ? getName() != null : !NAME_EDEFAULT.equals(getName());
         }
         return super.eIsSet(featureID);
     }

@@ -2,6 +2,8 @@
  */
 package kubernetesModel.resourceenvironment.impl;
 
+import java.math.BigInteger;
+
 import kubernetesModel.resourceenvironment.KubernetesNode;
 import kubernetesModel.resourceenvironment.ResourceenvironmentPackage;
 
@@ -43,7 +45,7 @@ public class KubernetesNodeImpl extends ResourceContainerImpl implements Kuberne
      * @generated
      * @ordered
      */
-    protected static final int MEMORY_EDEFAULT = 0;
+    protected static final BigInteger MEMORY_EDEFAULT = null;
 
     /**
      * The default value of the '{@link #getCpu() <em>Cpu</em>}' attribute.
@@ -97,8 +99,8 @@ public class KubernetesNodeImpl extends ResourceContainerImpl implements Kuberne
      * <!-- end-user-doc -->
      * @generated
      */
-    public int getMemory() {
-        return (Integer)eDynamicGet(ResourceenvironmentPackage.KUBERNETES_NODE__MEMORY, ResourceenvironmentPackage.Literals.KUBERNETES_NODE__MEMORY, true, true);
+    public BigInteger getMemory() {
+        return (BigInteger)eDynamicGet(ResourceenvironmentPackage.KUBERNETES_NODE__MEMORY, ResourceenvironmentPackage.Literals.KUBERNETES_NODE__MEMORY, true, true);
     }
 
     /**
@@ -106,7 +108,7 @@ public class KubernetesNodeImpl extends ResourceContainerImpl implements Kuberne
      * <!-- end-user-doc -->
      * @generated
      */
-    public void setMemory(int newMemory) {
+    public void setMemory(BigInteger newMemory) {
         eDynamicSet(ResourceenvironmentPackage.KUBERNETES_NODE__MEMORY, ResourceenvironmentPackage.Literals.KUBERNETES_NODE__MEMORY, newMemory);
     }
 
@@ -158,7 +160,7 @@ public class KubernetesNodeImpl extends ResourceContainerImpl implements Kuberne
                 setIsMasterNode((Boolean)newValue);
                 return;
             case ResourceenvironmentPackage.KUBERNETES_NODE__MEMORY:
-                setMemory((Integer)newValue);
+                setMemory((BigInteger)newValue);
                 return;
             case ResourceenvironmentPackage.KUBERNETES_NODE__CPU:
                 setCpu((Integer)newValue);
@@ -199,7 +201,7 @@ public class KubernetesNodeImpl extends ResourceContainerImpl implements Kuberne
             case ResourceenvironmentPackage.KUBERNETES_NODE__IS_MASTER_NODE:
                 return isIsMasterNode() != IS_MASTER_NODE_EDEFAULT;
             case ResourceenvironmentPackage.KUBERNETES_NODE__MEMORY:
-                return getMemory() != MEMORY_EDEFAULT;
+                return MEMORY_EDEFAULT == null ? getMemory() != null : !MEMORY_EDEFAULT.equals(getMemory());
             case ResourceenvironmentPackage.KUBERNETES_NODE__CPU:
                 return getCpu() != CPU_EDEFAULT;
         }

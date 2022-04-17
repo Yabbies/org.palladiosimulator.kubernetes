@@ -2,7 +2,6 @@
  */
 package kubernetesModel.k8sconcepts;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,15 +21,25 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface K8sAdditionalRequestLimit extends AbstractK8sRequestLimit {
     /**
-     * Returns the value of the '<em><b>Specification</b></em>' attribute list.
-     * The list contents are of type {@link java.lang.String}.
+     * Returns the value of the '<em><b>Specification</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Specification</em>' attribute list.
+     * @return the value of the '<em>Specification</em>' attribute.
+     * @see #setSpecification(String)
      * @see kubernetesModel.k8sconcepts.K8sconceptsPackage#getK8sAdditionalRequestLimit_Specification()
      * @model
      * @generated
      */
-    EList<String> getSpecification();
+    String getSpecification();
+
+    /**
+     * Sets the value of the '{@link kubernetesModel.k8sconcepts.K8sAdditionalRequestLimit#getSpecification <em>Specification</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Specification</em>' attribute.
+     * @see #getSpecification()
+     * @generated
+     */
+    void setSpecification(String value);
 
 } // K8sAdditionalRequestLimit

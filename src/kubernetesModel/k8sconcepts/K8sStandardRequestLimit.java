@@ -2,7 +2,7 @@
  */
 package kubernetesModel.k8sconcepts;
 
-import org.eclipse.emf.common.util.EList;
+import java.math.BigInteger;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,27 +23,47 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface K8sStandardRequestLimit extends AbstractK8sRequestLimit {
     /**
-     * Returns the value of the '<em><b>Cpu</b></em>' attribute list.
-     * The list contents are of type {@link java.lang.Integer}.
+     * Returns the value of the '<em><b>Cpu</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Cpu</em>' attribute list.
+     * @return the value of the '<em>Cpu</em>' attribute.
+     * @see #setCpu(int)
      * @see kubernetesModel.k8sconcepts.K8sconceptsPackage#getK8sStandardRequestLimit_Cpu()
      * @model
      * @generated
      */
-    EList<Integer> getCpu();
+    int getCpu();
 
     /**
-     * Returns the value of the '<em><b>Memory</b></em>' attribute list.
-     * The list contents are of type {@link java.lang.Integer}.
+     * Sets the value of the '{@link kubernetesModel.k8sconcepts.K8sStandardRequestLimit#getCpu <em>Cpu</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Memory</em>' attribute list.
+     * @param value the new value of the '<em>Cpu</em>' attribute.
+     * @see #getCpu()
+     * @generated
+     */
+    void setCpu(int value);
+
+    /**
+     * Returns the value of the '<em><b>Memory</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Memory</em>' attribute.
+     * @see #setMemory(BigInteger)
      * @see kubernetesModel.k8sconcepts.K8sconceptsPackage#getK8sStandardRequestLimit_Memory()
      * @model
      * @generated
      */
-    EList<Integer> getMemory();
+    BigInteger getMemory();
+
+    /**
+     * Sets the value of the '{@link kubernetesModel.k8sconcepts.K8sStandardRequestLimit#getMemory <em>Memory</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Memory</em>' attribute.
+     * @see #getMemory()
+     * @generated
+     */
+    void setMemory(BigInteger value);
 
 } // K8sStandardRequestLimit

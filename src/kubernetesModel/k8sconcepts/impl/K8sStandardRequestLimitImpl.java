@@ -2,12 +2,10 @@
  */
 package kubernetesModel.k8sconcepts.impl;
 
-import java.util.Collection;
+import java.math.BigInteger;
 
 import kubernetesModel.k8sconcepts.K8sStandardRequestLimit;
 import kubernetesModel.k8sconcepts.K8sconceptsPackage;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -26,6 +24,26 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class K8sStandardRequestLimitImpl extends AbstractK8sRequestLimitImpl implements K8sStandardRequestLimit {
+    /**
+     * The default value of the '{@link #getCpu() <em>Cpu</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getCpu()
+     * @generated
+     * @ordered
+     */
+    protected static final int CPU_EDEFAULT = 0;
+
+    /**
+     * The default value of the '{@link #getMemory() <em>Memory</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getMemory()
+     * @generated
+     * @ordered
+     */
+    protected static final BigInteger MEMORY_EDEFAULT = null;
+
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -50,9 +68,8 @@ public class K8sStandardRequestLimitImpl extends AbstractK8sRequestLimitImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
-    @SuppressWarnings("unchecked")
-    public EList<Integer> getCpu() {
-        return (EList<Integer>)eDynamicGet(K8sconceptsPackage.K8S_STANDARD_REQUEST_LIMIT__CPU, K8sconceptsPackage.Literals.K8S_STANDARD_REQUEST_LIMIT__CPU, true, true);
+    public int getCpu() {
+        return (Integer)eDynamicGet(K8sconceptsPackage.K8S_STANDARD_REQUEST_LIMIT__CPU, K8sconceptsPackage.Literals.K8S_STANDARD_REQUEST_LIMIT__CPU, true, true);
     }
 
     /**
@@ -60,9 +77,26 @@ public class K8sStandardRequestLimitImpl extends AbstractK8sRequestLimitImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
-    @SuppressWarnings("unchecked")
-    public EList<Integer> getMemory() {
-        return (EList<Integer>)eDynamicGet(K8sconceptsPackage.K8S_STANDARD_REQUEST_LIMIT__MEMORY, K8sconceptsPackage.Literals.K8S_STANDARD_REQUEST_LIMIT__MEMORY, true, true);
+    public void setCpu(int newCpu) {
+        eDynamicSet(K8sconceptsPackage.K8S_STANDARD_REQUEST_LIMIT__CPU, K8sconceptsPackage.Literals.K8S_STANDARD_REQUEST_LIMIT__CPU, newCpu);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public BigInteger getMemory() {
+        return (BigInteger)eDynamicGet(K8sconceptsPackage.K8S_STANDARD_REQUEST_LIMIT__MEMORY, K8sconceptsPackage.Literals.K8S_STANDARD_REQUEST_LIMIT__MEMORY, true, true);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setMemory(BigInteger newMemory) {
+        eDynamicSet(K8sconceptsPackage.K8S_STANDARD_REQUEST_LIMIT__MEMORY, K8sconceptsPackage.Literals.K8S_STANDARD_REQUEST_LIMIT__MEMORY, newMemory);
     }
 
     /**
@@ -86,17 +120,14 @@ public class K8sStandardRequestLimitImpl extends AbstractK8sRequestLimitImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
-    @SuppressWarnings("unchecked")
     @Override
     public void eSet(int featureID, Object newValue) {
         switch (featureID) {
             case K8sconceptsPackage.K8S_STANDARD_REQUEST_LIMIT__CPU:
-                getCpu().clear();
-                getCpu().addAll((Collection<? extends Integer>)newValue);
+                setCpu((Integer)newValue);
                 return;
             case K8sconceptsPackage.K8S_STANDARD_REQUEST_LIMIT__MEMORY:
-                getMemory().clear();
-                getMemory().addAll((Collection<? extends Integer>)newValue);
+                setMemory((BigInteger)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -111,10 +142,10 @@ public class K8sStandardRequestLimitImpl extends AbstractK8sRequestLimitImpl imp
     public void eUnset(int featureID) {
         switch (featureID) {
             case K8sconceptsPackage.K8S_STANDARD_REQUEST_LIMIT__CPU:
-                getCpu().clear();
+                setCpu(CPU_EDEFAULT);
                 return;
             case K8sconceptsPackage.K8S_STANDARD_REQUEST_LIMIT__MEMORY:
-                getMemory().clear();
+                setMemory(MEMORY_EDEFAULT);
                 return;
         }
         super.eUnset(featureID);
@@ -129,9 +160,9 @@ public class K8sStandardRequestLimitImpl extends AbstractK8sRequestLimitImpl imp
     public boolean eIsSet(int featureID) {
         switch (featureID) {
             case K8sconceptsPackage.K8S_STANDARD_REQUEST_LIMIT__CPU:
-                return !getCpu().isEmpty();
+                return getCpu() != CPU_EDEFAULT;
             case K8sconceptsPackage.K8S_STANDARD_REQUEST_LIMIT__MEMORY:
-                return !getMemory().isEmpty();
+                return MEMORY_EDEFAULT == null ? getMemory() != null : !MEMORY_EDEFAULT.equals(getMemory());
         }
         return super.eIsSet(featureID);
     }
