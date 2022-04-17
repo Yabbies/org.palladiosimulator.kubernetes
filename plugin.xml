@@ -11,7 +11,7 @@
       <package
             uri="org.palladiosimulator.kubernetesModel.resourceenvironment"
             class="kubernetesModel.resourceenvironment.ResourceenvironmentPackage"
-            genModel="model/BA_Test_Model_K8s.genmodel"/>
+            genModel="model/BA_Model_K8s.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -19,7 +19,7 @@
       <package
             uri="org.palladiosimulator.kubernetesModel.repository"
             class="kubernetesModel.repository.RepositoryPackage"
-            genModel="model/BA_Test_Model_K8s.genmodel"/>
+            genModel="model/BA_Model_K8s.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -27,7 +27,7 @@
       <package
             uri="org.palladiosimulator.kubernetesModel.k8sconcepts"
             class="kubernetesModel.k8sconcepts.K8sconceptsPackage"
-            genModel="model/BA_Test_Model_K8s.genmodel"/>
+            genModel="model/BA_Model_K8s.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -35,7 +35,7 @@
       <package
             uri="org.palladiosimulator.kubernetes.kubernetesModel.system"
             class="kubernetesModel.system.SystemPackage"
-            genModel="model/BA_Test_Model_K8s.genmodel"/>
+            genModel="model/BA_Model_K8s.genmodel"/>
    </extension>
 
 </plugin>
