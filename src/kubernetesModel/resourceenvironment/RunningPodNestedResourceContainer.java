@@ -2,6 +2,8 @@
  */
 package kubernetesModel.resourceenvironment;
 
+import kubernetesModel.k8sconcepts.Deployment;
+
 import org.palladiosimulator.pcm.resourceenvironment.ResourceContainer;
 
 /**

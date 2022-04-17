@@ -28,6 +28,8 @@ import org.palladiosimulator.pcm.repository.CompositeComponent;
 import org.palladiosimulator.pcm.repository.ImplementationComponentType;
 import org.palladiosimulator.pcm.repository.RepositoryComponent;
 
+import org.palladiosimulator.pcm.subsystem.SubSystem;
+
 /**
  * <!-- begin-user-doc -->
  * The <b>Switch</b> for the model's inheritance hierarchy.
@@ -108,11 +110,10 @@ public class RepositorySwitch<T> extends Switch<T> {
             case RepositoryPackage.POD: {
                 Pod pod = (Pod)theEObject;
                 T result = casePod(pod);
-                if (result == null) result = caseCompositeComponent(pod);
+                if (result == null) result = caseSubSystem(pod);
                 if (result == null) result = caseComposedProvidingRequiringEntity(pod);
-                if (result == null) result = caseImplementationComponentType(pod);
-                if (result == null) result = caseComposedStructure(pod);
                 if (result == null) result = caseRepositoryComponent(pod);
+                if (result == null) result = caseComposedStructure(pod);
                 if (result == null) result = caseInterfaceProvidingRequiringEntity(pod);
                 if (result == null) result = caseInterfaceProvidingEntity(pod);
                 if (result == null) result = caseInterfaceRequiringEntity(pod);
@@ -366,6 +367,21 @@ public class RepositorySwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseCompositeComponent(CompositeComponent object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Sub System</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Sub System</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseSubSystem(SubSystem object) {
         return null;
     }
 

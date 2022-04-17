@@ -30,6 +30,8 @@ import org.palladiosimulator.pcm.repository.CompositeComponent;
 import org.palladiosimulator.pcm.repository.ImplementationComponentType;
 import org.palladiosimulator.pcm.repository.RepositoryComponent;
 
+import org.palladiosimulator.pcm.subsystem.SubSystem;
+
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
@@ -149,6 +151,10 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
             @Override
             public Adapter caseCompositeComponent(CompositeComponent object) {
                 return createCompositeComponentAdapter();
+            }
+            @Override
+            public Adapter caseSubSystem(SubSystem object) {
+                return createSubSystemAdapter();
             }
             @Override
             public Adapter defaultCase(EObject object) {
@@ -391,6 +397,20 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createCompositeComponentAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.palladiosimulator.pcm.subsystem.SubSystem <em>Sub System</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.palladiosimulator.pcm.subsystem.SubSystem
+     * @generated
+     */
+    public Adapter createSubSystemAdapter() {
         return null;
     }
 

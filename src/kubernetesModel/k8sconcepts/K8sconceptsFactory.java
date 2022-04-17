@@ -22,6 +22,15 @@ public interface K8sconceptsFactory extends EFactory {
     K8sconceptsFactory eINSTANCE = kubernetesModel.k8sconcepts.impl.K8sconceptsFactoryImpl.init();
 
     /**
+     * Returns a new object of class '<em>Deployment</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Deployment</em>'.
+     * @generated
+     */
+    Deployment createDeployment();
+
+    /**
      * Returns a new object of class '<em>K8s Standard Request Limit</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -38,6 +47,24 @@ public interface K8sconceptsFactory extends EFactory {
      * @generated
      */
     K8sAdditionalRequestLimit createK8sAdditionalRequestLimit();
+
+    /**
+     * Returns a new object of class '<em>Requests Limits Repository</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Requests Limits Repository</em>'.
+     * @generated
+     */
+    RequestsLimitsRepository createRequestsLimitsRepository();
+
+    /**
+     * Returns a new object of class '<em>Deployments</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Deployments</em>'.
+     * @generated
+     */
+    Deployments createDeployments();
 
     /**
      * Returns the package supported by this factory.

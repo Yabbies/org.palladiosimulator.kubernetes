@@ -11,10 +11,13 @@ import de.uka.ipd.sdq.stoex.StoexPackage;
 import de.uka.ipd.sdq.units.UnitsPackage;
 
 import kubernetesModel.k8sconcepts.AbstractK8sRequestLimit;
+import kubernetesModel.k8sconcepts.Deployment;
+import kubernetesModel.k8sconcepts.Deployments;
 import kubernetesModel.k8sconcepts.K8sAdditionalRequestLimit;
 import kubernetesModel.k8sconcepts.K8sStandardRequestLimit;
 import kubernetesModel.k8sconcepts.K8sconceptsFactory;
 import kubernetesModel.k8sconcepts.K8sconceptsPackage;
+import kubernetesModel.k8sconcepts.RequestsLimitsRepository;
 
 import kubernetesModel.repository.RepositoryPackage;
 
@@ -24,14 +27,21 @@ import kubernetesModel.resourceenvironment.ResourceenvironmentPackage;
 
 import kubernetesModel.resourceenvironment.impl.ResourceenvironmentPackageImpl;
 
+import kubernetesModel.system.SystemPackage;
+
+import kubernetesModel.system.impl.SystemPackageImpl;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.palladiosimulator.pcm.PcmPackage;
+
+import org.palladiosimulator.pcm.core.entity.EntityPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,6 +50,13 @@ import org.palladiosimulator.pcm.PcmPackage;
  * @generated
  */
 public class K8sconceptsPackageImpl extends EPackageImpl implements K8sconceptsPackage {
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass deploymentEClass = null;
+
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -60,6 +77,20 @@ public class K8sconceptsPackageImpl extends EPackageImpl implements K8sconceptsP
      * @generated
      */
     private EClass k8sAdditionalRequestLimitEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass requestsLimitsRepositoryEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass deploymentsEClass = null;
 
     /**
      * Creates an instance of the model <b>Package</b>, registered with
@@ -121,16 +152,20 @@ public class K8sconceptsPackageImpl extends EPackageImpl implements K8sconceptsP
         ResourceenvironmentPackageImpl theResourceenvironmentPackage = (ResourceenvironmentPackageImpl)(registeredPackage instanceof ResourceenvironmentPackageImpl ? registeredPackage : ResourceenvironmentPackage.eINSTANCE);
         registeredPackage = EPackage.Registry.INSTANCE.getEPackage(RepositoryPackage.eNS_URI);
         RepositoryPackageImpl theRepositoryPackage = (RepositoryPackageImpl)(registeredPackage instanceof RepositoryPackageImpl ? registeredPackage : RepositoryPackage.eINSTANCE);
+        registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SystemPackage.eNS_URI);
+        SystemPackageImpl theSystemPackage = (SystemPackageImpl)(registeredPackage instanceof SystemPackageImpl ? registeredPackage : SystemPackage.eINSTANCE);
 
         // Create package meta-data objects
         theK8sconceptsPackage.createPackageContents();
         theResourceenvironmentPackage.createPackageContents();
         theRepositoryPackage.createPackageContents();
+        theSystemPackage.createPackageContents();
 
         // Initialize created meta-data
         theK8sconceptsPackage.initializePackageContents();
         theResourceenvironmentPackage.initializePackageContents();
         theRepositoryPackage.initializePackageContents();
+        theSystemPackage.initializePackageContents();
 
         // Mark meta-data to indicate it can't be changed
         theK8sconceptsPackage.freeze();
@@ -138,6 +173,51 @@ public class K8sconceptsPackageImpl extends EPackageImpl implements K8sconceptsP
         // Update the registry and return the package
         EPackage.Registry.INSTANCE.put(K8sconceptsPackage.eNS_URI, theK8sconceptsPackage);
         return theK8sconceptsPackage;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getDeployment() {
+        return deploymentEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getDeployment_Replicas() {
+        return (EAttribute)deploymentEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getDeployment_PodReference() {
+        return (EReference)deploymentEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getDeployment_AllocatedPods() {
+        return (EReference)deploymentEClass.getEStructuralFeatures().get(2);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getDeployment_Name() {
+        return (EAttribute)deploymentEClass.getEStructuralFeatures().get(3);
     }
 
     /**
@@ -199,6 +279,42 @@ public class K8sconceptsPackageImpl extends EPackageImpl implements K8sconceptsP
      * <!-- end-user-doc -->
      * @generated
      */
+    public EClass getRequestsLimitsRepository() {
+        return requestsLimitsRepositoryEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getRequestsLimitsRepository_RequestsLimitsRepo() {
+        return (EReference)requestsLimitsRepositoryEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getDeployments() {
+        return deploymentsEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getDeployments_DeploymentInstances() {
+        return (EReference)deploymentsEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public K8sconceptsFactory getK8sconceptsFactory() {
         return (K8sconceptsFactory)getEFactoryInstance();
     }
@@ -222,6 +338,12 @@ public class K8sconceptsPackageImpl extends EPackageImpl implements K8sconceptsP
         isCreated = true;
 
         // Create classes and their features
+        deploymentEClass = createEClass(DEPLOYMENT);
+        createEAttribute(deploymentEClass, DEPLOYMENT__REPLICAS);
+        createEReference(deploymentEClass, DEPLOYMENT__POD_REFERENCE);
+        createEReference(deploymentEClass, DEPLOYMENT__ALLOCATED_PODS);
+        createEAttribute(deploymentEClass, DEPLOYMENT__NAME);
+
         abstractK8sRequestLimitEClass = createEClass(ABSTRACT_K8S_REQUEST_LIMIT);
 
         k8sStandardRequestLimitEClass = createEClass(K8S_STANDARD_REQUEST_LIMIT);
@@ -230,6 +352,12 @@ public class K8sconceptsPackageImpl extends EPackageImpl implements K8sconceptsP
 
         k8sAdditionalRequestLimitEClass = createEClass(K8S_ADDITIONAL_REQUEST_LIMIT);
         createEAttribute(k8sAdditionalRequestLimitEClass, K8S_ADDITIONAL_REQUEST_LIMIT__SPECIFICATION);
+
+        requestsLimitsRepositoryEClass = createEClass(REQUESTS_LIMITS_REPOSITORY);
+        createEReference(requestsLimitsRepositoryEClass, REQUESTS_LIMITS_REPOSITORY__REQUESTS_LIMITS_REPO);
+
+        deploymentsEClass = createEClass(DEPLOYMENTS);
+        createEReference(deploymentsEClass, DEPLOYMENTS__DEPLOYMENT_INSTANCES);
     }
 
     /**
@@ -256,17 +384,28 @@ public class K8sconceptsPackageImpl extends EPackageImpl implements K8sconceptsP
         setNsURI(eNS_URI);
 
         // Obtain other dependent packages
+        EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
         EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+        RepositoryPackage theRepositoryPackage = (RepositoryPackage)EPackage.Registry.INSTANCE.getEPackage(RepositoryPackage.eNS_URI);
+        ResourceenvironmentPackage theResourceenvironmentPackage = (ResourceenvironmentPackage)EPackage.Registry.INSTANCE.getEPackage(ResourceenvironmentPackage.eNS_URI);
 
         // Create type parameters
 
         // Set bounds for type parameters
 
         // Add supertypes to classes
+        deploymentEClass.getESuperTypes().add(theEntityPackage.getEntity());
+        abstractK8sRequestLimitEClass.getESuperTypes().add(theEntityPackage.getEntity());
         k8sStandardRequestLimitEClass.getESuperTypes().add(this.getAbstractK8sRequestLimit());
         k8sAdditionalRequestLimitEClass.getESuperTypes().add(this.getAbstractK8sRequestLimit());
 
         // Initialize classes and features; add operations and parameters
+        initEClass(deploymentEClass, Deployment.class, "Deployment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getDeployment_Replicas(), theEcorePackage.getEInt(), "replicas", "1", 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getDeployment_PodReference(), theRepositoryPackage.getPod(), null, "PodReference", null, 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getDeployment_AllocatedPods(), theResourceenvironmentPackage.getRunningPodNestedResourceContainer(), null, "AllocatedPods", null, 0, -1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getDeployment_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
         initEClass(abstractK8sRequestLimitEClass, AbstractK8sRequestLimit.class, "AbstractK8sRequestLimit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
         initEClass(k8sStandardRequestLimitEClass, K8sStandardRequestLimit.class, "K8sStandardRequestLimit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -275,6 +414,12 @@ public class K8sconceptsPackageImpl extends EPackageImpl implements K8sconceptsP
 
         initEClass(k8sAdditionalRequestLimitEClass, K8sAdditionalRequestLimit.class, "K8sAdditionalRequestLimit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getK8sAdditionalRequestLimit_Specification(), theEcorePackage.getEString(), "specification", null, 0, -1, K8sAdditionalRequestLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(requestsLimitsRepositoryEClass, RequestsLimitsRepository.class, "RequestsLimitsRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getRequestsLimitsRepository_RequestsLimitsRepo(), this.getAbstractK8sRequestLimit(), null, "requestsLimitsRepo", null, 0, -1, RequestsLimitsRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+        initEClass(deploymentsEClass, Deployments.class, "Deployments", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getDeployments_DeploymentInstances(), this.getDeployment(), null, "DeploymentInstances", null, 0, -1, Deployments.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         // Create resource
         createResource(eNS_URI);

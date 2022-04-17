@@ -2,7 +2,8 @@
  */
 package kubernetesModel.resourceenvironment.impl;
 
-import kubernetesModel.resourceenvironment.Deployment;
+import kubernetesModel.k8sconcepts.Deployment;
+
 import kubernetesModel.resourceenvironment.ResourceenvironmentPackage;
 import kubernetesModel.resourceenvironment.RunningPodNestedResourceContainer;
 

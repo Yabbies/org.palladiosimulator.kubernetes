@@ -30,4 +30,12 @@
             genModel="model/BA_Test_Model_K8s.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated BA_Test_Model_K8s -->
+      <package
+            uri="org.palladiosimulator.kubernetes.kubernetesModel.system"
+            class="kubernetesModel.system.SystemPackage"
+            genModel="model/BA_Test_Model_K8s.genmodel"/>
+   </extension>
+
 </plugin>

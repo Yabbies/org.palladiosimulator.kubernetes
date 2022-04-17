@@ -4,7 +4,7 @@ package kubernetesModel.repository;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.palladiosimulator.pcm.repository.CompositeComponent;
+import org.palladiosimulator.pcm.subsystem.SubSystem;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +22,7 @@ import org.palladiosimulator.pcm.repository.CompositeComponent;
  * @model
  * @generated
  */
-public interface Pod extends CompositeComponent {
+public interface Pod extends SubSystem {
     /**
      * Returns the value of the '<em><b>Containers</b></em>' reference list.
      * The list contents are of type {@link kubernetesModel.repository.Container}.

@@ -1,10 +1,10 @@
 /**
  */
-package kubernetesModel.resourceenvironment.util;
+package kubernetesModel.system.util;
 
 import de.uka.ipd.sdq.identifier.Identifier;
 
-import kubernetesModel.resourceenvironment.*;
+import kubernetesModel.system.*;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -14,10 +14,10 @@ import org.eclipse.emf.ecore.util.Switch;
 import org.palladiosimulator.pcm.PCMBaseClass;
 import org.palladiosimulator.pcm.PCMClass;
 
+import org.palladiosimulator.pcm.core.composition.AssemblyContext;
+
 import org.palladiosimulator.pcm.core.entity.Entity;
 import org.palladiosimulator.pcm.core.entity.NamedElement;
-
-import org.palladiosimulator.pcm.resourceenvironment.ResourceContainer;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,17 +29,17 @@ import org.palladiosimulator.pcm.resourceenvironment.ResourceContainer;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see kubernetesModel.resourceenvironment.ResourceenvironmentPackage
+ * @see kubernetesModel.system.SystemPackage
  * @generated
  */
-public class ResourceenvironmentSwitch<T> extends Switch<T> {
+public class SystemSwitch<T> extends Switch<T> {
     /**
      * The cached model package
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected static ResourceenvironmentPackage modelPackage;
+    protected static SystemPackage modelPackage;
 
     /**
      * Creates an instance of the switch.
@@ -47,9 +47,9 @@ public class ResourceenvironmentSwitch<T> extends Switch<T> {
      * <!-- end-user-doc -->
      * @generated
      */
-    public ResourceenvironmentSwitch() {
+    public SystemSwitch() {
         if (modelPackage == null) {
-            modelPackage = ResourceenvironmentPackage.eINSTANCE;
+            modelPackage = SystemPackage.eINSTANCE;
         }
     }
 
@@ -76,27 +76,15 @@ public class ResourceenvironmentSwitch<T> extends Switch<T> {
     @Override
     protected T doSwitch(int classifierID, EObject theEObject) {
         switch (classifierID) {
-            case ResourceenvironmentPackage.KUBERNETES_NODE: {
-                KubernetesNode kubernetesNode = (KubernetesNode)theEObject;
-                T result = caseKubernetesNode(kubernetesNode);
-                if (result == null) result = caseResourceContainer(kubernetesNode);
-                if (result == null) result = caseEntity(kubernetesNode);
-                if (result == null) result = caseIdentifier(kubernetesNode);
-                if (result == null) result = caseNamedElement(kubernetesNode);
-                if (result == null) result = casePCMBaseClass(kubernetesNode);
-                if (result == null) result = casePCMClass(kubernetesNode);
-                if (result == null) result = defaultCase(theEObject);
-                return result;
-            }
-            case ResourceenvironmentPackage.RUNNING_POD_NESTED_RESOURCE_CONTAINER: {
-                RunningPodNestedResourceContainer runningPodNestedResourceContainer = (RunningPodNestedResourceContainer)theEObject;
-                T result = caseRunningPodNestedResourceContainer(runningPodNestedResourceContainer);
-                if (result == null) result = caseResourceContainer(runningPodNestedResourceContainer);
-                if (result == null) result = caseEntity(runningPodNestedResourceContainer);
-                if (result == null) result = caseIdentifier(runningPodNestedResourceContainer);
-                if (result == null) result = caseNamedElement(runningPodNestedResourceContainer);
-                if (result == null) result = casePCMBaseClass(runningPodNestedResourceContainer);
-                if (result == null) result = casePCMClass(runningPodNestedResourceContainer);
+            case SystemPackage.DEPLOYMENT_ASSEMBLY: {
+                DeploymentAssembly deploymentAssembly = (DeploymentAssembly)theEObject;
+                T result = caseDeploymentAssembly(deploymentAssembly);
+                if (result == null) result = caseAssemblyContext(deploymentAssembly);
+                if (result == null) result = caseEntity(deploymentAssembly);
+                if (result == null) result = caseIdentifier(deploymentAssembly);
+                if (result == null) result = caseNamedElement(deploymentAssembly);
+                if (result == null) result = casePCMBaseClass(deploymentAssembly);
+                if (result == null) result = casePCMClass(deploymentAssembly);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -105,32 +93,17 @@ public class ResourceenvironmentSwitch<T> extends Switch<T> {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Kubernetes Node</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>Deployment Assembly</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
      * returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Kubernetes Node</em>'.
+     * @return the result of interpreting the object as an instance of '<em>Deployment Assembly</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseKubernetesNode(KubernetesNode object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Running Pod Nested Resource Container</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Running Pod Nested Resource Container</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseRunningPodNestedResourceContainer(RunningPodNestedResourceContainer object) {
+    public T caseDeploymentAssembly(DeploymentAssembly object) {
         return null;
     }
 
@@ -210,17 +183,17 @@ public class ResourceenvironmentSwitch<T> extends Switch<T> {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Resource Container</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>Assembly Context</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
      * returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Resource Container</em>'.
+     * @return the result of interpreting the object as an instance of '<em>Assembly Context</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseResourceContainer(ResourceContainer object) {
+    public T caseAssemblyContext(AssemblyContext object) {
         return null;
     }
 
@@ -240,4 +213,4 @@ public class ResourceenvironmentSwitch<T> extends Switch<T> {
         return null;
     }
 
-} //ResourceenvironmentSwitch
+} //SystemSwitch

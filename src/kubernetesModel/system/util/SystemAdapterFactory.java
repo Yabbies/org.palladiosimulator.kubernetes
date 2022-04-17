@@ -1,10 +1,10 @@
 /**
  */
-package kubernetesModel.resourceenvironment.util;
+package kubernetesModel.system.util;
 
 import de.uka.ipd.sdq.identifier.Identifier;
 
-import kubernetesModel.resourceenvironment.*;
+import kubernetesModel.system.*;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -16,27 +16,27 @@ import org.eclipse.emf.ecore.EObject;
 import org.palladiosimulator.pcm.PCMBaseClass;
 import org.palladiosimulator.pcm.PCMClass;
 
+import org.palladiosimulator.pcm.core.composition.AssemblyContext;
+
 import org.palladiosimulator.pcm.core.entity.Entity;
 import org.palladiosimulator.pcm.core.entity.NamedElement;
-
-import org.palladiosimulator.pcm.resourceenvironment.ResourceContainer;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see kubernetesModel.resourceenvironment.ResourceenvironmentPackage
+ * @see kubernetesModel.system.SystemPackage
  * @generated
  */
-public class ResourceenvironmentAdapterFactory extends AdapterFactoryImpl {
+public class SystemAdapterFactory extends AdapterFactoryImpl {
     /**
      * The cached model package.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected static ResourceenvironmentPackage modelPackage;
+    protected static SystemPackage modelPackage;
 
     /**
      * Creates an instance of the adapter factory.
@@ -44,9 +44,9 @@ public class ResourceenvironmentAdapterFactory extends AdapterFactoryImpl {
      * <!-- end-user-doc -->
      * @generated
      */
-    public ResourceenvironmentAdapterFactory() {
+    public SystemAdapterFactory() {
         if (modelPackage == null) {
-            modelPackage = ResourceenvironmentPackage.eINSTANCE;
+            modelPackage = SystemPackage.eINSTANCE;
         }
     }
 
@@ -75,15 +75,11 @@ public class ResourceenvironmentAdapterFactory extends AdapterFactoryImpl {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected ResourceenvironmentSwitch<Adapter> modelSwitch =
-        new ResourceenvironmentSwitch<Adapter>() {
+    protected SystemSwitch<Adapter> modelSwitch =
+        new SystemSwitch<Adapter>() {
             @Override
-            public Adapter caseKubernetesNode(KubernetesNode object) {
-                return createKubernetesNodeAdapter();
-            }
-            @Override
-            public Adapter caseRunningPodNestedResourceContainer(RunningPodNestedResourceContainer object) {
-                return createRunningPodNestedResourceContainerAdapter();
+            public Adapter caseDeploymentAssembly(DeploymentAssembly object) {
+                return createDeploymentAssemblyAdapter();
             }
             @Override
             public Adapter caseIdentifier(Identifier object) {
@@ -106,8 +102,8 @@ public class ResourceenvironmentAdapterFactory extends AdapterFactoryImpl {
                 return createEntityAdapter();
             }
             @Override
-            public Adapter caseResourceContainer(ResourceContainer object) {
-                return createResourceContainerAdapter();
+            public Adapter caseAssemblyContext(AssemblyContext object) {
+                return createAssemblyContextAdapter();
             }
             @Override
             public Adapter defaultCase(EObject object) {
@@ -130,30 +126,16 @@ public class ResourceenvironmentAdapterFactory extends AdapterFactoryImpl {
 
 
     /**
-     * Creates a new adapter for an object of class '{@link kubernetesModel.resourceenvironment.KubernetesNode <em>Kubernetes Node</em>}'.
+     * Creates a new adapter for an object of class '{@link kubernetesModel.system.DeploymentAssembly <em>Deployment Assembly</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see kubernetesModel.resourceenvironment.KubernetesNode
+     * @see kubernetesModel.system.DeploymentAssembly
      * @generated
      */
-    public Adapter createKubernetesNodeAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link kubernetesModel.resourceenvironment.RunningPodNestedResourceContainer <em>Running Pod Nested Resource Container</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see kubernetesModel.resourceenvironment.RunningPodNestedResourceContainer
-     * @generated
-     */
-    public Adapter createRunningPodNestedResourceContainerAdapter() {
+    public Adapter createDeploymentAssemblyAdapter() {
         return null;
     }
 
@@ -228,16 +210,16 @@ public class ResourceenvironmentAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link org.palladiosimulator.pcm.resourceenvironment.ResourceContainer <em>Resource Container</em>}'.
+     * Creates a new adapter for an object of class '{@link org.palladiosimulator.pcm.core.composition.AssemblyContext <em>Assembly Context</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see org.palladiosimulator.pcm.resourceenvironment.ResourceContainer
+     * @see org.palladiosimulator.pcm.core.composition.AssemblyContext
      * @generated
      */
-    public Adapter createResourceContainerAdapter() {
+    public Adapter createAssemblyContextAdapter() {
         return null;
     }
 
@@ -253,4 +235,4 @@ public class ResourceenvironmentAdapterFactory extends AdapterFactoryImpl {
         return null;
     }
 
-} //ResourceenvironmentAdapterFactory
+} //SystemAdapterFactory

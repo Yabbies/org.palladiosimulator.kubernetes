@@ -1,6 +1,6 @@
 /**
  */
-package kubernetesModel.repository.impl;
+package kubernetesModel.system.impl;
 
 import de.uka.ipd.sdq.identifier.IdentifierPackage;
 
@@ -14,17 +14,17 @@ import kubernetesModel.k8sconcepts.K8sconceptsPackage;
 
 import kubernetesModel.k8sconcepts.impl.K8sconceptsPackageImpl;
 
-import kubernetesModel.repository.Pod;
-import kubernetesModel.repository.RepositoryFactory;
 import kubernetesModel.repository.RepositoryPackage;
+
+import kubernetesModel.repository.impl.RepositoryPackageImpl;
 
 import kubernetesModel.resourceenvironment.ResourceenvironmentPackage;
 
 import kubernetesModel.resourceenvironment.impl.ResourceenvironmentPackageImpl;
 
+import kubernetesModel.system.DeploymentAssembly;
+import kubernetesModel.system.SystemFactory;
 import kubernetesModel.system.SystemPackage;
-
-import kubernetesModel.system.impl.SystemPackageImpl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -35,7 +35,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.palladiosimulator.pcm.PcmPackage;
 
-import org.palladiosimulator.pcm.subsystem.SubsystemPackage;
+import org.palladiosimulator.pcm.core.composition.CompositionPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,20 +43,13 @@ import org.palladiosimulator.pcm.subsystem.SubsystemPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPackage {
+public class SystemPackageImpl extends EPackageImpl implements SystemPackage {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass containerEClass = null;
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    private EClass podEClass = null;
+    private EClass deploymentAssemblyEClass = null;
 
     /**
      * Creates an instance of the model <b>Package</b>, registered with
@@ -69,12 +62,12 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see org.eclipse.emf.ecore.EPackage.Registry
-     * @see kubernetesModel.repository.RepositoryPackage#eNS_URI
+     * @see kubernetesModel.system.SystemPackage#eNS_URI
      * @see #init()
      * @generated
      */
-    private RepositoryPackageImpl() {
-        super(eNS_URI, RepositoryFactory.eINSTANCE);
+    private SystemPackageImpl() {
+        super(eNS_URI, SystemFactory.eINSTANCE);
     }
 
     /**
@@ -87,7 +80,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
     /**
      * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
      *
-     * <p>This method is used to initialize {@link RepositoryPackage#eINSTANCE} when that field is accessed.
+     * <p>This method is used to initialize {@link SystemPackage#eINSTANCE} when that field is accessed.
      * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -96,12 +89,12 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
      * @see #initializePackageContents()
      * @generated
      */
-    public static RepositoryPackage init() {
-        if (isInited) return (RepositoryPackage)EPackage.Registry.INSTANCE.getEPackage(RepositoryPackage.eNS_URI);
+    public static SystemPackage init() {
+        if (isInited) return (SystemPackage)EPackage.Registry.INSTANCE.getEPackage(SystemPackage.eNS_URI);
 
         // Obtain or create and register package
-        Object registeredRepositoryPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-        RepositoryPackageImpl theRepositoryPackage = registeredRepositoryPackage instanceof RepositoryPackageImpl ? (RepositoryPackageImpl)registeredRepositoryPackage : new RepositoryPackageImpl();
+        Object registeredSystemPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+        SystemPackageImpl theSystemPackage = registeredSystemPackage instanceof SystemPackageImpl ? (SystemPackageImpl)registeredSystemPackage : new SystemPackageImpl();
 
         isInited = true;
 
@@ -116,29 +109,29 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
         // Obtain or create and register interdependencies
         Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ResourceenvironmentPackage.eNS_URI);
         ResourceenvironmentPackageImpl theResourceenvironmentPackage = (ResourceenvironmentPackageImpl)(registeredPackage instanceof ResourceenvironmentPackageImpl ? registeredPackage : ResourceenvironmentPackage.eINSTANCE);
+        registeredPackage = EPackage.Registry.INSTANCE.getEPackage(RepositoryPackage.eNS_URI);
+        RepositoryPackageImpl theRepositoryPackage = (RepositoryPackageImpl)(registeredPackage instanceof RepositoryPackageImpl ? registeredPackage : RepositoryPackage.eINSTANCE);
         registeredPackage = EPackage.Registry.INSTANCE.getEPackage(K8sconceptsPackage.eNS_URI);
         K8sconceptsPackageImpl theK8sconceptsPackage = (K8sconceptsPackageImpl)(registeredPackage instanceof K8sconceptsPackageImpl ? registeredPackage : K8sconceptsPackage.eINSTANCE);
-        registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SystemPackage.eNS_URI);
-        SystemPackageImpl theSystemPackage = (SystemPackageImpl)(registeredPackage instanceof SystemPackageImpl ? registeredPackage : SystemPackage.eINSTANCE);
 
         // Create package meta-data objects
-        theRepositoryPackage.createPackageContents();
-        theResourceenvironmentPackage.createPackageContents();
-        theK8sconceptsPackage.createPackageContents();
         theSystemPackage.createPackageContents();
+        theResourceenvironmentPackage.createPackageContents();
+        theRepositoryPackage.createPackageContents();
+        theK8sconceptsPackage.createPackageContents();
 
         // Initialize created meta-data
-        theRepositoryPackage.initializePackageContents();
-        theResourceenvironmentPackage.initializePackageContents();
-        theK8sconceptsPackage.initializePackageContents();
         theSystemPackage.initializePackageContents();
+        theResourceenvironmentPackage.initializePackageContents();
+        theRepositoryPackage.initializePackageContents();
+        theK8sconceptsPackage.initializePackageContents();
 
         // Mark meta-data to indicate it can't be changed
-        theRepositoryPackage.freeze();
+        theSystemPackage.freeze();
 
         // Update the registry and return the package
-        EPackage.Registry.INSTANCE.put(RepositoryPackage.eNS_URI, theRepositoryPackage);
-        return theRepositoryPackage;
+        EPackage.Registry.INSTANCE.put(SystemPackage.eNS_URI, theSystemPackage);
+        return theSystemPackage;
     }
 
     /**
@@ -146,8 +139,8 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getContainer() {
-        return containerEClass;
+    public EClass getDeploymentAssembly() {
+        return deploymentAssemblyEClass;
     }
 
     /**
@@ -155,8 +148,8 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
      * <!-- end-user-doc -->
      * @generated
      */
-    public EReference getContainer_StandardLimit() {
-        return (EReference)containerEClass.getEStructuralFeatures().get(0);
+    public EReference getDeploymentAssembly_Deployment() {
+        return (EReference)deploymentAssemblyEClass.getEStructuralFeatures().get(0);
     }
 
     /**
@@ -164,35 +157,8 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
      * <!-- end-user-doc -->
      * @generated
      */
-    public EReference getContainer_StandardRequest() {
-        return (EReference)containerEClass.getEStructuralFeatures().get(1);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EClass getPod() {
-        return podEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EReference getPod_Containers() {
-        return (EReference)podEClass.getEStructuralFeatures().get(0);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public RepositoryFactory getRepositoryFactory() {
-        return (RepositoryFactory)getEFactoryInstance();
+    public SystemFactory getSystemFactory() {
+        return (SystemFactory)getEFactoryInstance();
     }
 
     /**
@@ -214,12 +180,8 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
         isCreated = true;
 
         // Create classes and their features
-        containerEClass = createEClass(CONTAINER);
-        createEReference(containerEClass, CONTAINER__STANDARD_LIMIT);
-        createEReference(containerEClass, CONTAINER__STANDARD_REQUEST);
-
-        podEClass = createEClass(POD);
-        createEReference(podEClass, POD__CONTAINERS);
+        deploymentAssemblyEClass = createEClass(DEPLOYMENT_ASSEMBLY);
+        createEReference(deploymentAssemblyEClass, DEPLOYMENT_ASSEMBLY__DEPLOYMENT);
     }
 
     /**
@@ -246,28 +208,22 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
         setNsURI(eNS_URI);
 
         // Obtain other dependent packages
-        org.palladiosimulator.pcm.repository.RepositoryPackage theRepositoryPackage_1 = (org.palladiosimulator.pcm.repository.RepositoryPackage)EPackage.Registry.INSTANCE.getEPackage(org.palladiosimulator.pcm.repository.RepositoryPackage.eNS_URI);
+        CompositionPackage theCompositionPackage = (CompositionPackage)EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI);
         K8sconceptsPackage theK8sconceptsPackage = (K8sconceptsPackage)EPackage.Registry.INSTANCE.getEPackage(K8sconceptsPackage.eNS_URI);
-        SubsystemPackage theSubsystemPackage = (SubsystemPackage)EPackage.Registry.INSTANCE.getEPackage(SubsystemPackage.eNS_URI);
 
         // Create type parameters
 
         // Set bounds for type parameters
 
         // Add supertypes to classes
-        containerEClass.getESuperTypes().add(theRepositoryPackage_1.getCompositeComponent());
-        podEClass.getESuperTypes().add(theSubsystemPackage.getSubSystem());
+        deploymentAssemblyEClass.getESuperTypes().add(theCompositionPackage.getAssemblyContext());
 
         // Initialize classes and features; add operations and parameters
-        initEClass(containerEClass, kubernetesModel.repository.Container.class, "Container", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getContainer_StandardLimit(), theK8sconceptsPackage.getK8sStandardRequestLimit(), null, "standardLimit", null, 0, 1, kubernetesModel.repository.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEReference(getContainer_StandardRequest(), theK8sconceptsPackage.getK8sStandardRequestLimit(), null, "standardRequest", null, 0, 1, kubernetesModel.repository.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-        initEClass(podEClass, Pod.class, "Pod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getPod_Containers(), this.getContainer(), null, "Containers", null, 0, -1, Pod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEClass(deploymentAssemblyEClass, DeploymentAssembly.class, "DeploymentAssembly", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getDeploymentAssembly_Deployment(), theK8sconceptsPackage.getDeployment(), null, "Deployment", null, 0, 1, DeploymentAssembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         // Create resource
         createResource(eNS_URI);
     }
 
-} //RepositoryPackageImpl
+} //SystemPackageImpl

@@ -2,7 +2,7 @@
  */
 package kubernetesModel.k8sconcepts;
 
-import org.eclipse.emf.cdo.CDOObject;
+import org.palladiosimulator.pcm.core.entity.Entity;
 
 /**
  * <!-- begin-user-doc -->
@@ -12,8 +12,7 @@ import org.eclipse.emf.cdo.CDOObject;
  *
  * @see kubernetesModel.k8sconcepts.K8sconceptsPackage#getAbstractK8sRequestLimit()
  * @model abstract="true"
- * @extends CDOObject
  * @generated
  */
-public interface AbstractK8sRequestLimit extends CDOObject {
+public interface AbstractK8sRequestLimit extends Entity {
 } // AbstractK8sRequestLimit

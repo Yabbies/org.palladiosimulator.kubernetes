@@ -16,7 +16,10 @@ Export-Package: kubernetesModel.k8sconcepts,
  kubernetesModel.repository.util,
  kubernetesModel.resourceenvironment,
  kubernetesModel.resourceenvironment.impl,
- kubernetesModel.resourceenvironment.util
+ kubernetesModel.resourceenvironment.util,
+ kubernetesModel.system,
+ kubernetesModel.system.impl,
+ kubernetesModel.system.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.cdo;visibility:=reexport,

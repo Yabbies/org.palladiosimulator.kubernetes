@@ -31,15 +31,6 @@ public interface ResourceenvironmentFactory extends EFactory {
     KubernetesNode createKubernetesNode();
 
     /**
-     * Returns a new object of class '<em>Deployment</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Deployment</em>'.
-     * @generated
-     */
-    Deployment createDeployment();
-
-    /**
      * Returns a new object of class '<em>Running Pod Nested Resource Container</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

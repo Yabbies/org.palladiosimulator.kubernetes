@@ -11,18 +11,10 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="memory" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="cpu" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Deployment">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="replicas" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
-          defaultValueLiteral="1"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="PodImageReference" eType="#//repository/Pod"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="AllocatedPods" upperBound="-1"
-          eType="#//resourceenvironment/RunningPodNestedResourceContainer" containment="true"/>
-    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RunningPodNestedResourceContainer"
         eSuperTypes="../../org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ResourceContainer">
       <eStructuralFeatures xsi:type="ecore:EReference" name="selectorDeploymentReference"
-          eType="#//resourceenvironment/Deployment" containment="true"/>
+          eType="#//k8sconcepts/Deployment" containment="true"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="repository" nsURI="org.palladiosimulator.kubernetesModel.repository"
@@ -30,22 +22,24 @@
     <eClassifiers xsi:type="ecore:EClass" name="Container" eSuperTypes="../../org.palladiosimulator.pcm/model/pcm.ecore#//repository/CompositeComponent">
       <eStructuralFeatures xsi:type="ecore:EReference" name="standardLimit" eType="#//k8sconcepts/K8sStandardRequestLimit"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="standardRequest" eType="#//k8sconcepts/K8sStandardRequestLimit"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="containerMemoryRequest"
-          eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBigInteger"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="containerMemoryLimit"
-          eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBigInteger"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="containerCPURequest"
-          eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="containerCPULimit" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Pod" eSuperTypes="../../org.palladiosimulator.pcm/model/pcm.ecore#//repository/CompositeComponent">
+    <eClassifiers xsi:type="ecore:EClass" name="Pod" eSuperTypes="../../org.palladiosimulator.pcm/model/pcm.ecore#//subsystem/SubSystem">
       <eStructuralFeatures xsi:type="ecore:EReference" name="Containers" upperBound="-1"
           eType="#//repository/Container"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="k8sconcepts" nsURI="org.palladiosimulator.kubernetesModel.k8sconcepts"
       nsPrefix="k8s">
-    <eClassifiers xsi:type="ecore:EClass" name="AbstractK8sRequestLimit" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Deployment" eSuperTypes="../../org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="replicas" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+          defaultValueLiteral="1"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="PodReference" eType="#//repository/Pod"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="AllocatedPods" upperBound="-1"
+          eType="#//resourceenvironment/RunningPodNestedResourceContainer" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractK8sRequestLimit" abstract="true"
+        eSuperTypes="../../org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity"/>
     <eClassifiers xsi:type="ecore:EClass" name="K8sStandardRequestLimit" eSuperTypes="#//k8sconcepts/AbstractK8sRequestLimit">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="cpu" upperBound="-1"
           eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
@@ -55,6 +49,20 @@
     <eClassifiers xsi:type="ecore:EClass" name="K8sAdditionalRequestLimit" eSuperTypes="#//k8sconcepts/AbstractK8sRequestLimit">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="specification" upperBound="-1"
           eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RequestsLimitsRepository">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="requestsLimitsRepo" ordered="false"
+          upperBound="-1" eType="#//k8sconcepts/AbstractK8sRequestLimit" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Deployments">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="DeploymentInstances"
+          upperBound="-1" eType="#//k8sconcepts/Deployment" containment="true"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="system" nsURI="org.palladiosimulator.kubernetes.kubernetesModel.system"
+      nsPrefix="sys">
+    <eClassifiers xsi:type="ecore:EClass" name="DeploymentAssembly" eSuperTypes="../../org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/AssemblyContext">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="Deployment" eType="#//k8sconcepts/Deployment"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

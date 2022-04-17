@@ -2,10 +2,11 @@
  */
 package kubernetesModel.repository;
 
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
+import org.palladiosimulator.pcm.subsystem.SubsystemPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -201,49 +202,13 @@ public interface RepositoryPackage extends EPackage {
     int CONTAINER__STANDARD_REQUEST = org.palladiosimulator.pcm.repository.RepositoryPackage.COMPOSITE_COMPONENT_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Container Memory Request</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CONTAINER__CONTAINER_MEMORY_REQUEST = org.palladiosimulator.pcm.repository.RepositoryPackage.COMPOSITE_COMPONENT_FEATURE_COUNT + 2;
-
-    /**
-     * The feature id for the '<em><b>Container Memory Limit</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CONTAINER__CONTAINER_MEMORY_LIMIT = org.palladiosimulator.pcm.repository.RepositoryPackage.COMPOSITE_COMPONENT_FEATURE_COUNT + 3;
-
-    /**
-     * The feature id for the '<em><b>Container CPU Request</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CONTAINER__CONTAINER_CPU_REQUEST = org.palladiosimulator.pcm.repository.RepositoryPackage.COMPOSITE_COMPONENT_FEATURE_COUNT + 4;
-
-    /**
-     * The feature id for the '<em><b>Container CPU Limit</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CONTAINER__CONTAINER_CPU_LIMIT = org.palladiosimulator.pcm.repository.RepositoryPackage.COMPOSITE_COMPONENT_FEATURE_COUNT + 5;
-
-    /**
      * The number of structural features of the '<em>Container</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CONTAINER_FEATURE_COUNT = org.palladiosimulator.pcm.repository.RepositoryPackage.COMPOSITE_COMPONENT_FEATURE_COUNT + 6;
+    int CONTAINER_FEATURE_COUNT = org.palladiosimulator.pcm.repository.RepositoryPackage.COMPOSITE_COMPONENT_FEATURE_COUNT + 2;
 
     /**
      * The meta object id for the '{@link kubernetesModel.repository.impl.PodImpl <em>Pod</em>}' class.
@@ -262,7 +227,7 @@ public interface RepositoryPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int POD__ID = org.palladiosimulator.pcm.repository.RepositoryPackage.COMPOSITE_COMPONENT__ID;
+    int POD__ID = SubsystemPackage.SUB_SYSTEM__ID;
 
     /**
      * The feature id for the '<em><b>Entity Name</b></em>' attribute.
@@ -271,7 +236,7 @@ public interface RepositoryPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int POD__ENTITY_NAME = org.palladiosimulator.pcm.repository.RepositoryPackage.COMPOSITE_COMPONENT__ENTITY_NAME;
+    int POD__ENTITY_NAME = SubsystemPackage.SUB_SYSTEM__ENTITY_NAME;
 
     /**
      * The feature id for the '<em><b>Assembly Contexts Composed Structure</b></em>' containment reference list.
@@ -280,7 +245,7 @@ public interface RepositoryPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int POD__ASSEMBLY_CONTEXTS_COMPOSED_STRUCTURE = org.palladiosimulator.pcm.repository.RepositoryPackage.COMPOSITE_COMPONENT__ASSEMBLY_CONTEXTS_COMPOSED_STRUCTURE;
+    int POD__ASSEMBLY_CONTEXTS_COMPOSED_STRUCTURE = SubsystemPackage.SUB_SYSTEM__ASSEMBLY_CONTEXTS_COMPOSED_STRUCTURE;
 
     /**
      * The feature id for the '<em><b>Resource Required Delegation Connectors Composed Structure</b></em>' containment reference list.
@@ -289,7 +254,7 @@ public interface RepositoryPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int POD__RESOURCE_REQUIRED_DELEGATION_CONNECTORS_COMPOSED_STRUCTURE = org.palladiosimulator.pcm.repository.RepositoryPackage.COMPOSITE_COMPONENT__RESOURCE_REQUIRED_DELEGATION_CONNECTORS_COMPOSED_STRUCTURE;
+    int POD__RESOURCE_REQUIRED_DELEGATION_CONNECTORS_COMPOSED_STRUCTURE = SubsystemPackage.SUB_SYSTEM__RESOURCE_REQUIRED_DELEGATION_CONNECTORS_COMPOSED_STRUCTURE;
 
     /**
      * The feature id for the '<em><b>Event Channel Composed Structure</b></em>' containment reference list.
@@ -298,7 +263,7 @@ public interface RepositoryPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int POD__EVENT_CHANNEL_COMPOSED_STRUCTURE = org.palladiosimulator.pcm.repository.RepositoryPackage.COMPOSITE_COMPONENT__EVENT_CHANNEL_COMPOSED_STRUCTURE;
+    int POD__EVENT_CHANNEL_COMPOSED_STRUCTURE = SubsystemPackage.SUB_SYSTEM__EVENT_CHANNEL_COMPOSED_STRUCTURE;
 
     /**
      * The feature id for the '<em><b>Connectors Composed Structure</b></em>' containment reference list.
@@ -307,7 +272,7 @@ public interface RepositoryPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int POD__CONNECTORS_COMPOSED_STRUCTURE = org.palladiosimulator.pcm.repository.RepositoryPackage.COMPOSITE_COMPONENT__CONNECTORS_COMPOSED_STRUCTURE;
+    int POD__CONNECTORS_COMPOSED_STRUCTURE = SubsystemPackage.SUB_SYSTEM__CONNECTORS_COMPOSED_STRUCTURE;
 
     /**
      * The feature id for the '<em><b>Provided Roles Interface Providing Entity</b></em>' containment reference list.
@@ -316,7 +281,7 @@ public interface RepositoryPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int POD__PROVIDED_ROLES_INTERFACE_PROVIDING_ENTITY = org.palladiosimulator.pcm.repository.RepositoryPackage.COMPOSITE_COMPONENT__PROVIDED_ROLES_INTERFACE_PROVIDING_ENTITY;
+    int POD__PROVIDED_ROLES_INTERFACE_PROVIDING_ENTITY = SubsystemPackage.SUB_SYSTEM__PROVIDED_ROLES_INTERFACE_PROVIDING_ENTITY;
 
     /**
      * The feature id for the '<em><b>Resource Required Roles Resource Interface Requiring Entity</b></em>' containment reference list.
@@ -325,7 +290,7 @@ public interface RepositoryPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int POD__RESOURCE_REQUIRED_ROLES_RESOURCE_INTERFACE_REQUIRING_ENTITY = org.palladiosimulator.pcm.repository.RepositoryPackage.COMPOSITE_COMPONENT__RESOURCE_REQUIRED_ROLES_RESOURCE_INTERFACE_REQUIRING_ENTITY;
+    int POD__RESOURCE_REQUIRED_ROLES_RESOURCE_INTERFACE_REQUIRING_ENTITY = SubsystemPackage.SUB_SYSTEM__RESOURCE_REQUIRED_ROLES_RESOURCE_INTERFACE_REQUIRING_ENTITY;
 
     /**
      * The feature id for the '<em><b>Required Roles Interface Requiring Entity</b></em>' containment reference list.
@@ -334,7 +299,7 @@ public interface RepositoryPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int POD__REQUIRED_ROLES_INTERFACE_REQUIRING_ENTITY = org.palladiosimulator.pcm.repository.RepositoryPackage.COMPOSITE_COMPONENT__REQUIRED_ROLES_INTERFACE_REQUIRING_ENTITY;
+    int POD__REQUIRED_ROLES_INTERFACE_REQUIRING_ENTITY = SubsystemPackage.SUB_SYSTEM__REQUIRED_ROLES_INTERFACE_REQUIRING_ENTITY;
 
     /**
      * The feature id for the '<em><b>Repository Repository Component</b></em>' container reference.
@@ -343,34 +308,7 @@ public interface RepositoryPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int POD__REPOSITORY_REPOSITORY_COMPONENT = org.palladiosimulator.pcm.repository.RepositoryPackage.COMPOSITE_COMPONENT__REPOSITORY_REPOSITORY_COMPONENT;
-
-    /**
-     * The feature id for the '<em><b>Parent Complete Component Types</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int POD__PARENT_COMPLETE_COMPONENT_TYPES = org.palladiosimulator.pcm.repository.RepositoryPackage.COMPOSITE_COMPONENT__PARENT_COMPLETE_COMPONENT_TYPES;
-
-    /**
-     * The feature id for the '<em><b>Component Parameter Usage Implementation Component Type</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int POD__COMPONENT_PARAMETER_USAGE_IMPLEMENTATION_COMPONENT_TYPE = org.palladiosimulator.pcm.repository.RepositoryPackage.COMPOSITE_COMPONENT__COMPONENT_PARAMETER_USAGE_IMPLEMENTATION_COMPONENT_TYPE;
-
-    /**
-     * The feature id for the '<em><b>Component Type</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int POD__COMPONENT_TYPE = org.palladiosimulator.pcm.repository.RepositoryPackage.COMPOSITE_COMPONENT__COMPONENT_TYPE;
+    int POD__REPOSITORY_REPOSITORY_COMPONENT = SubsystemPackage.SUB_SYSTEM__REPOSITORY_REPOSITORY_COMPONENT;
 
     /**
      * The feature id for the '<em><b>Containers</b></em>' reference list.
@@ -379,7 +317,7 @@ public interface RepositoryPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int POD__CONTAINERS = org.palladiosimulator.pcm.repository.RepositoryPackage.COMPOSITE_COMPONENT_FEATURE_COUNT + 0;
+    int POD__CONTAINERS = SubsystemPackage.SUB_SYSTEM_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>Pod</em>' class.
@@ -388,7 +326,7 @@ public interface RepositoryPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int POD_FEATURE_COUNT = org.palladiosimulator.pcm.repository.RepositoryPackage.COMPOSITE_COMPONENT_FEATURE_COUNT + 1;
+    int POD_FEATURE_COUNT = SubsystemPackage.SUB_SYSTEM_FEATURE_COUNT + 1;
 
 
     /**
@@ -422,50 +360,6 @@ public interface RepositoryPackage extends EPackage {
      * @generated
      */
     EReference getContainer_StandardRequest();
-
-    /**
-     * Returns the meta object for the attribute '{@link kubernetesModel.repository.Container#getContainerMemoryRequest <em>Container Memory Request</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Container Memory Request</em>'.
-     * @see kubernetesModel.repository.Container#getContainerMemoryRequest()
-     * @see #getContainer()
-     * @generated
-     */
-    EAttribute getContainer_ContainerMemoryRequest();
-
-    /**
-     * Returns the meta object for the attribute '{@link kubernetesModel.repository.Container#getContainerMemoryLimit <em>Container Memory Limit</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Container Memory Limit</em>'.
-     * @see kubernetesModel.repository.Container#getContainerMemoryLimit()
-     * @see #getContainer()
-     * @generated
-     */
-    EAttribute getContainer_ContainerMemoryLimit();
-
-    /**
-     * Returns the meta object for the attribute '{@link kubernetesModel.repository.Container#getContainerCPURequest <em>Container CPU Request</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Container CPU Request</em>'.
-     * @see kubernetesModel.repository.Container#getContainerCPURequest()
-     * @see #getContainer()
-     * @generated
-     */
-    EAttribute getContainer_ContainerCPURequest();
-
-    /**
-     * Returns the meta object for the attribute '{@link kubernetesModel.repository.Container#getContainerCPULimit <em>Container CPU Limit</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Container CPU Limit</em>'.
-     * @see kubernetesModel.repository.Container#getContainerCPULimit()
-     * @see #getContainer()
-     * @generated
-     */
-    EAttribute getContainer_ContainerCPULimit();
 
     /**
      * Returns the meta object for class '{@link kubernetesModel.repository.Pod <em>Pod</em>}'.
@@ -535,38 +429,6 @@ public interface RepositoryPackage extends EPackage {
          * @generated
          */
         EReference CONTAINER__STANDARD_REQUEST = eINSTANCE.getContainer_StandardRequest();
-
-        /**
-         * The meta object literal for the '<em><b>Container Memory Request</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EAttribute CONTAINER__CONTAINER_MEMORY_REQUEST = eINSTANCE.getContainer_ContainerMemoryRequest();
-
-        /**
-         * The meta object literal for the '<em><b>Container Memory Limit</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EAttribute CONTAINER__CONTAINER_MEMORY_LIMIT = eINSTANCE.getContainer_ContainerMemoryLimit();
-
-        /**
-         * The meta object literal for the '<em><b>Container CPU Request</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EAttribute CONTAINER__CONTAINER_CPU_REQUEST = eINSTANCE.getContainer_ContainerCPURequest();
-
-        /**
-         * The meta object literal for the '<em><b>Container CPU Limit</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EAttribute CONTAINER__CONTAINER_CPU_LIMIT = eINSTANCE.getContainer_ContainerCPULimit();
 
         /**
          * The meta object literal for the '{@link kubernetesModel.repository.impl.PodImpl <em>Pod</em>}' class.

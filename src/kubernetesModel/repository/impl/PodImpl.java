@@ -11,7 +11,7 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.palladiosimulator.pcm.repository.impl.CompositeComponentImpl;
+import org.palladiosimulator.pcm.subsystem.impl.SubSystemImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,7 +26,7 @@ import org.palladiosimulator.pcm.repository.impl.CompositeComponentImpl;
  *
  * @generated
  */
-public class PodImpl extends CompositeComponentImpl implements Pod {
+public class PodImpl extends SubSystemImpl implements Pod {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

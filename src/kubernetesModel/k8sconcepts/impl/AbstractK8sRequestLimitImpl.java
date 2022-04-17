@@ -7,7 +7,7 @@ import kubernetesModel.k8sconcepts.K8sconceptsPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.internal.cdo.CDOObjectImpl;
+import org.palladiosimulator.pcm.core.entity.impl.EntityImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,7 +16,7 @@ import org.eclipse.emf.internal.cdo.CDOObjectImpl;
  *
  * @generated
  */
-public abstract class AbstractK8sRequestLimitImpl extends CDOObjectImpl implements AbstractK8sRequestLimit {
+public abstract class AbstractK8sRequestLimitImpl extends EntityImpl implements AbstractK8sRequestLimit {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -34,16 +34,6 @@ public abstract class AbstractK8sRequestLimitImpl extends CDOObjectImpl implemen
     @Override
     protected EClass eStaticClass() {
         return K8sconceptsPackage.Literals.ABSTRACT_K8S_REQUEST_LIMIT;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    protected int eStaticFeatureCount() {
-        return 0;
     }
 
 } //AbstractK8sRequestLimitImpl

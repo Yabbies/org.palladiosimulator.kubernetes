@@ -2,12 +2,20 @@
  */
 package kubernetesModel.k8sconcepts.util;
 
+import de.uka.ipd.sdq.identifier.Identifier;
+
 import kubernetesModel.k8sconcepts.*;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
+
+import org.palladiosimulator.pcm.PCMBaseClass;
+import org.palladiosimulator.pcm.PCMClass;
+
+import org.palladiosimulator.pcm.core.entity.Entity;
+import org.palladiosimulator.pcm.core.entity.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -66,9 +74,25 @@ public class K8sconceptsSwitch<T> extends Switch<T> {
     @Override
     protected T doSwitch(int classifierID, EObject theEObject) {
         switch (classifierID) {
+            case K8sconceptsPackage.DEPLOYMENT: {
+                Deployment deployment = (Deployment)theEObject;
+                T result = caseDeployment(deployment);
+                if (result == null) result = caseEntity(deployment);
+                if (result == null) result = caseIdentifier(deployment);
+                if (result == null) result = caseNamedElement(deployment);
+                if (result == null) result = casePCMBaseClass(deployment);
+                if (result == null) result = casePCMClass(deployment);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
             case K8sconceptsPackage.ABSTRACT_K8S_REQUEST_LIMIT: {
                 AbstractK8sRequestLimit abstractK8sRequestLimit = (AbstractK8sRequestLimit)theEObject;
                 T result = caseAbstractK8sRequestLimit(abstractK8sRequestLimit);
+                if (result == null) result = caseEntity(abstractK8sRequestLimit);
+                if (result == null) result = caseIdentifier(abstractK8sRequestLimit);
+                if (result == null) result = caseNamedElement(abstractK8sRequestLimit);
+                if (result == null) result = casePCMBaseClass(abstractK8sRequestLimit);
+                if (result == null) result = casePCMClass(abstractK8sRequestLimit);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -76,6 +100,11 @@ public class K8sconceptsSwitch<T> extends Switch<T> {
                 K8sStandardRequestLimit k8sStandardRequestLimit = (K8sStandardRequestLimit)theEObject;
                 T result = caseK8sStandardRequestLimit(k8sStandardRequestLimit);
                 if (result == null) result = caseAbstractK8sRequestLimit(k8sStandardRequestLimit);
+                if (result == null) result = caseEntity(k8sStandardRequestLimit);
+                if (result == null) result = caseIdentifier(k8sStandardRequestLimit);
+                if (result == null) result = caseNamedElement(k8sStandardRequestLimit);
+                if (result == null) result = casePCMBaseClass(k8sStandardRequestLimit);
+                if (result == null) result = casePCMClass(k8sStandardRequestLimit);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -83,11 +112,43 @@ public class K8sconceptsSwitch<T> extends Switch<T> {
                 K8sAdditionalRequestLimit k8sAdditionalRequestLimit = (K8sAdditionalRequestLimit)theEObject;
                 T result = caseK8sAdditionalRequestLimit(k8sAdditionalRequestLimit);
                 if (result == null) result = caseAbstractK8sRequestLimit(k8sAdditionalRequestLimit);
+                if (result == null) result = caseEntity(k8sAdditionalRequestLimit);
+                if (result == null) result = caseIdentifier(k8sAdditionalRequestLimit);
+                if (result == null) result = caseNamedElement(k8sAdditionalRequestLimit);
+                if (result == null) result = casePCMBaseClass(k8sAdditionalRequestLimit);
+                if (result == null) result = casePCMClass(k8sAdditionalRequestLimit);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case K8sconceptsPackage.REQUESTS_LIMITS_REPOSITORY: {
+                RequestsLimitsRepository requestsLimitsRepository = (RequestsLimitsRepository)theEObject;
+                T result = caseRequestsLimitsRepository(requestsLimitsRepository);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case K8sconceptsPackage.DEPLOYMENTS: {
+                Deployments deployments = (Deployments)theEObject;
+                T result = caseDeployments(deployments);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
             default: return defaultCase(theEObject);
         }
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Deployment</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Deployment</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseDeployment(Deployment object) {
+        return null;
     }
 
     /**
@@ -132,6 +193,111 @@ public class K8sconceptsSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseK8sAdditionalRequestLimit(K8sAdditionalRequestLimit object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Requests Limits Repository</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Requests Limits Repository</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseRequestsLimitsRepository(RequestsLimitsRepository object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Deployments</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Deployments</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseDeployments(Deployments object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Identifier</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Identifier</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseIdentifier(Identifier object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>PCM Class</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>PCM Class</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T casePCMClass(PCMClass object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>PCM Base Class</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>PCM Base Class</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T casePCMBaseClass(PCMBaseClass object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseNamedElement(NamedElement object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Entity</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Entity</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseEntity(Entity object) {
         return null;
     }
 

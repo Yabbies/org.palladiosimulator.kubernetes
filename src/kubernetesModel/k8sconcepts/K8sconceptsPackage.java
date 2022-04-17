@@ -5,6 +5,9 @@ package kubernetesModel.k8sconcepts;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+import org.palladiosimulator.pcm.core.entity.EntityPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -55,6 +58,79 @@ public interface K8sconceptsPackage extends EPackage {
     K8sconceptsPackage eINSTANCE = kubernetesModel.k8sconcepts.impl.K8sconceptsPackageImpl.init();
 
     /**
+     * The meta object id for the '{@link kubernetesModel.k8sconcepts.impl.DeploymentImpl <em>Deployment</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see kubernetesModel.k8sconcepts.impl.DeploymentImpl
+     * @see kubernetesModel.k8sconcepts.impl.K8sconceptsPackageImpl#getDeployment()
+     * @generated
+     */
+    int DEPLOYMENT = 0;
+
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DEPLOYMENT__ID = EntityPackage.ENTITY__ID;
+
+    /**
+     * The feature id for the '<em><b>Entity Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DEPLOYMENT__ENTITY_NAME = EntityPackage.ENTITY__ENTITY_NAME;
+
+    /**
+     * The feature id for the '<em><b>Replicas</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DEPLOYMENT__REPLICAS = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Pod Reference</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DEPLOYMENT__POD_REFERENCE = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+
+    /**
+     * The feature id for the '<em><b>Allocated Pods</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DEPLOYMENT__ALLOCATED_PODS = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DEPLOYMENT__NAME = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+
+    /**
+     * The number of structural features of the '<em>Deployment</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DEPLOYMENT_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 4;
+
+    /**
      * The meta object id for the '{@link kubernetesModel.k8sconcepts.impl.AbstractK8sRequestLimitImpl <em>Abstract K8s Request Limit</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -62,7 +138,25 @@ public interface K8sconceptsPackage extends EPackage {
      * @see kubernetesModel.k8sconcepts.impl.K8sconceptsPackageImpl#getAbstractK8sRequestLimit()
      * @generated
      */
-    int ABSTRACT_K8S_REQUEST_LIMIT = 0;
+    int ABSTRACT_K8S_REQUEST_LIMIT = 1;
+
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_K8S_REQUEST_LIMIT__ID = EntityPackage.ENTITY__ID;
+
+    /**
+     * The feature id for the '<em><b>Entity Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_K8S_REQUEST_LIMIT__ENTITY_NAME = EntityPackage.ENTITY__ENTITY_NAME;
 
     /**
      * The number of structural features of the '<em>Abstract K8s Request Limit</em>' class.
@@ -71,7 +165,7 @@ public interface K8sconceptsPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ABSTRACT_K8S_REQUEST_LIMIT_FEATURE_COUNT = 0;
+    int ABSTRACT_K8S_REQUEST_LIMIT_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
     /**
      * The meta object id for the '{@link kubernetesModel.k8sconcepts.impl.K8sStandardRequestLimitImpl <em>K8s Standard Request Limit</em>}' class.
@@ -81,7 +175,25 @@ public interface K8sconceptsPackage extends EPackage {
      * @see kubernetesModel.k8sconcepts.impl.K8sconceptsPackageImpl#getK8sStandardRequestLimit()
      * @generated
      */
-    int K8S_STANDARD_REQUEST_LIMIT = 1;
+    int K8S_STANDARD_REQUEST_LIMIT = 2;
+
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int K8S_STANDARD_REQUEST_LIMIT__ID = ABSTRACT_K8S_REQUEST_LIMIT__ID;
+
+    /**
+     * The feature id for the '<em><b>Entity Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int K8S_STANDARD_REQUEST_LIMIT__ENTITY_NAME = ABSTRACT_K8S_REQUEST_LIMIT__ENTITY_NAME;
 
     /**
      * The feature id for the '<em><b>Cpu</b></em>' attribute list.
@@ -118,7 +230,25 @@ public interface K8sconceptsPackage extends EPackage {
      * @see kubernetesModel.k8sconcepts.impl.K8sconceptsPackageImpl#getK8sAdditionalRequestLimit()
      * @generated
      */
-    int K8S_ADDITIONAL_REQUEST_LIMIT = 2;
+    int K8S_ADDITIONAL_REQUEST_LIMIT = 3;
+
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int K8S_ADDITIONAL_REQUEST_LIMIT__ID = ABSTRACT_K8S_REQUEST_LIMIT__ID;
+
+    /**
+     * The feature id for the '<em><b>Entity Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int K8S_ADDITIONAL_REQUEST_LIMIT__ENTITY_NAME = ABSTRACT_K8S_REQUEST_LIMIT__ENTITY_NAME;
 
     /**
      * The feature id for the '<em><b>Specification</b></em>' attribute list.
@@ -138,6 +268,116 @@ public interface K8sconceptsPackage extends EPackage {
      */
     int K8S_ADDITIONAL_REQUEST_LIMIT_FEATURE_COUNT = ABSTRACT_K8S_REQUEST_LIMIT_FEATURE_COUNT + 1;
 
+    /**
+     * The meta object id for the '{@link kubernetesModel.k8sconcepts.impl.RequestsLimitsRepositoryImpl <em>Requests Limits Repository</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see kubernetesModel.k8sconcepts.impl.RequestsLimitsRepositoryImpl
+     * @see kubernetesModel.k8sconcepts.impl.K8sconceptsPackageImpl#getRequestsLimitsRepository()
+     * @generated
+     */
+    int REQUESTS_LIMITS_REPOSITORY = 4;
+
+    /**
+     * The feature id for the '<em><b>Requests Limits Repo</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int REQUESTS_LIMITS_REPOSITORY__REQUESTS_LIMITS_REPO = 0;
+
+    /**
+     * The number of structural features of the '<em>Requests Limits Repository</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int REQUESTS_LIMITS_REPOSITORY_FEATURE_COUNT = 1;
+
+    /**
+     * The meta object id for the '{@link kubernetesModel.k8sconcepts.impl.DeploymentsImpl <em>Deployments</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see kubernetesModel.k8sconcepts.impl.DeploymentsImpl
+     * @see kubernetesModel.k8sconcepts.impl.K8sconceptsPackageImpl#getDeployments()
+     * @generated
+     */
+    int DEPLOYMENTS = 5;
+
+    /**
+     * The feature id for the '<em><b>Deployment Instances</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DEPLOYMENTS__DEPLOYMENT_INSTANCES = 0;
+
+    /**
+     * The number of structural features of the '<em>Deployments</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DEPLOYMENTS_FEATURE_COUNT = 1;
+
+
+    /**
+     * Returns the meta object for class '{@link kubernetesModel.k8sconcepts.Deployment <em>Deployment</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Deployment</em>'.
+     * @see kubernetesModel.k8sconcepts.Deployment
+     * @generated
+     */
+    EClass getDeployment();
+
+    /**
+     * Returns the meta object for the attribute '{@link kubernetesModel.k8sconcepts.Deployment#getReplicas <em>Replicas</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Replicas</em>'.
+     * @see kubernetesModel.k8sconcepts.Deployment#getReplicas()
+     * @see #getDeployment()
+     * @generated
+     */
+    EAttribute getDeployment_Replicas();
+
+    /**
+     * Returns the meta object for the reference '{@link kubernetesModel.k8sconcepts.Deployment#getPodReference <em>Pod Reference</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Pod Reference</em>'.
+     * @see kubernetesModel.k8sconcepts.Deployment#getPodReference()
+     * @see #getDeployment()
+     * @generated
+     */
+    EReference getDeployment_PodReference();
+
+    /**
+     * Returns the meta object for the containment reference list '{@link kubernetesModel.k8sconcepts.Deployment#getAllocatedPods <em>Allocated Pods</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>Allocated Pods</em>'.
+     * @see kubernetesModel.k8sconcepts.Deployment#getAllocatedPods()
+     * @see #getDeployment()
+     * @generated
+     */
+    EReference getDeployment_AllocatedPods();
+
+    /**
+     * Returns the meta object for the attribute '{@link kubernetesModel.k8sconcepts.Deployment#getName <em>Name</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Name</em>'.
+     * @see kubernetesModel.k8sconcepts.Deployment#getName()
+     * @see #getDeployment()
+     * @generated
+     */
+    EAttribute getDeployment_Name();
 
     /**
      * Returns the meta object for class '{@link kubernetesModel.k8sconcepts.AbstractK8sRequestLimit <em>Abstract K8s Request Limit</em>}'.
@@ -203,6 +443,48 @@ public interface K8sconceptsPackage extends EPackage {
     EAttribute getK8sAdditionalRequestLimit_Specification();
 
     /**
+     * Returns the meta object for class '{@link kubernetesModel.k8sconcepts.RequestsLimitsRepository <em>Requests Limits Repository</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Requests Limits Repository</em>'.
+     * @see kubernetesModel.k8sconcepts.RequestsLimitsRepository
+     * @generated
+     */
+    EClass getRequestsLimitsRepository();
+
+    /**
+     * Returns the meta object for the containment reference list '{@link kubernetesModel.k8sconcepts.RequestsLimitsRepository#getRequestsLimitsRepo <em>Requests Limits Repo</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>Requests Limits Repo</em>'.
+     * @see kubernetesModel.k8sconcepts.RequestsLimitsRepository#getRequestsLimitsRepo()
+     * @see #getRequestsLimitsRepository()
+     * @generated
+     */
+    EReference getRequestsLimitsRepository_RequestsLimitsRepo();
+
+    /**
+     * Returns the meta object for class '{@link kubernetesModel.k8sconcepts.Deployments <em>Deployments</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Deployments</em>'.
+     * @see kubernetesModel.k8sconcepts.Deployments
+     * @generated
+     */
+    EClass getDeployments();
+
+    /**
+     * Returns the meta object for the containment reference list '{@link kubernetesModel.k8sconcepts.Deployments#getDeploymentInstances <em>Deployment Instances</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>Deployment Instances</em>'.
+     * @see kubernetesModel.k8sconcepts.Deployments#getDeploymentInstances()
+     * @see #getDeployments()
+     * @generated
+     */
+    EReference getDeployments_DeploymentInstances();
+
+    /**
      * Returns the factory that creates the instances of the model.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -224,6 +506,48 @@ public interface K8sconceptsPackage extends EPackage {
      * @generated
      */
     interface Literals {
+        /**
+         * The meta object literal for the '{@link kubernetesModel.k8sconcepts.impl.DeploymentImpl <em>Deployment</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see kubernetesModel.k8sconcepts.impl.DeploymentImpl
+         * @see kubernetesModel.k8sconcepts.impl.K8sconceptsPackageImpl#getDeployment()
+         * @generated
+         */
+        EClass DEPLOYMENT = eINSTANCE.getDeployment();
+
+        /**
+         * The meta object literal for the '<em><b>Replicas</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute DEPLOYMENT__REPLICAS = eINSTANCE.getDeployment_Replicas();
+
+        /**
+         * The meta object literal for the '<em><b>Pod Reference</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference DEPLOYMENT__POD_REFERENCE = eINSTANCE.getDeployment_PodReference();
+
+        /**
+         * The meta object literal for the '<em><b>Allocated Pods</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference DEPLOYMENT__ALLOCATED_PODS = eINSTANCE.getDeployment_AllocatedPods();
+
+        /**
+         * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute DEPLOYMENT__NAME = eINSTANCE.getDeployment_Name();
+
         /**
          * The meta object literal for the '{@link kubernetesModel.k8sconcepts.impl.AbstractK8sRequestLimitImpl <em>Abstract K8s Request Limit</em>}' class.
          * <!-- begin-user-doc -->
@@ -277,6 +601,42 @@ public interface K8sconceptsPackage extends EPackage {
          * @generated
          */
         EAttribute K8S_ADDITIONAL_REQUEST_LIMIT__SPECIFICATION = eINSTANCE.getK8sAdditionalRequestLimit_Specification();
+
+        /**
+         * The meta object literal for the '{@link kubernetesModel.k8sconcepts.impl.RequestsLimitsRepositoryImpl <em>Requests Limits Repository</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see kubernetesModel.k8sconcepts.impl.RequestsLimitsRepositoryImpl
+         * @see kubernetesModel.k8sconcepts.impl.K8sconceptsPackageImpl#getRequestsLimitsRepository()
+         * @generated
+         */
+        EClass REQUESTS_LIMITS_REPOSITORY = eINSTANCE.getRequestsLimitsRepository();
+
+        /**
+         * The meta object literal for the '<em><b>Requests Limits Repo</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference REQUESTS_LIMITS_REPOSITORY__REQUESTS_LIMITS_REPO = eINSTANCE.getRequestsLimitsRepository_RequestsLimitsRepo();
+
+        /**
+         * The meta object literal for the '{@link kubernetesModel.k8sconcepts.impl.DeploymentsImpl <em>Deployments</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see kubernetesModel.k8sconcepts.impl.DeploymentsImpl
+         * @see kubernetesModel.k8sconcepts.impl.K8sconceptsPackageImpl#getDeployments()
+         * @generated
+         */
+        EClass DEPLOYMENTS = eINSTANCE.getDeployments();
+
+        /**
+         * The meta object literal for the '<em><b>Deployment Instances</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference DEPLOYMENTS__DEPLOYMENT_INSTANCES = eINSTANCE.getDeployments_DeploymentInstances();
 
     }
 

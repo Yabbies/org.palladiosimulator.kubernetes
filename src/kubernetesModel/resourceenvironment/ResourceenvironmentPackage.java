@@ -165,61 +165,6 @@ public interface ResourceenvironmentPackage extends EPackage {
     int KUBERNETES_NODE_FEATURE_COUNT = org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentPackage.RESOURCE_CONTAINER_FEATURE_COUNT + 3;
 
     /**
-     * The meta object id for the '{@link kubernetesModel.resourceenvironment.impl.DeploymentImpl <em>Deployment</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see kubernetesModel.resourceenvironment.impl.DeploymentImpl
-     * @see kubernetesModel.resourceenvironment.impl.ResourceenvironmentPackageImpl#getDeployment()
-     * @generated
-     */
-    int DEPLOYMENT = 1;
-
-    /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DEPLOYMENT__NAME = 0;
-
-    /**
-     * The feature id for the '<em><b>Replicas</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DEPLOYMENT__REPLICAS = 1;
-
-    /**
-     * The feature id for the '<em><b>Pod Image Reference</b></em>' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DEPLOYMENT__POD_IMAGE_REFERENCE = 2;
-
-    /**
-     * The feature id for the '<em><b>Allocated Pods</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DEPLOYMENT__ALLOCATED_PODS = 3;
-
-    /**
-     * The number of structural features of the '<em>Deployment</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DEPLOYMENT_FEATURE_COUNT = 4;
-
-    /**
      * The meta object id for the '{@link kubernetesModel.resourceenvironment.impl.RunningPodNestedResourceContainerImpl <em>Running Pod Nested Resource Container</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -227,7 +172,7 @@ public interface ResourceenvironmentPackage extends EPackage {
      * @see kubernetesModel.resourceenvironment.impl.ResourceenvironmentPackageImpl#getRunningPodNestedResourceContainer()
      * @generated
      */
-    int RUNNING_POD_NESTED_RESOURCE_CONTAINER = 2;
+    int RUNNING_POD_NESTED_RESOURCE_CONTAINER = 1;
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -355,60 +300,6 @@ public interface ResourceenvironmentPackage extends EPackage {
     EAttribute getKubernetesNode_Cpu();
 
     /**
-     * Returns the meta object for class '{@link kubernetesModel.resourceenvironment.Deployment <em>Deployment</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Deployment</em>'.
-     * @see kubernetesModel.resourceenvironment.Deployment
-     * @generated
-     */
-    EClass getDeployment();
-
-    /**
-     * Returns the meta object for the attribute '{@link kubernetesModel.resourceenvironment.Deployment#getName <em>Name</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Name</em>'.
-     * @see kubernetesModel.resourceenvironment.Deployment#getName()
-     * @see #getDeployment()
-     * @generated
-     */
-    EAttribute getDeployment_Name();
-
-    /**
-     * Returns the meta object for the attribute '{@link kubernetesModel.resourceenvironment.Deployment#getReplicas <em>Replicas</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Replicas</em>'.
-     * @see kubernetesModel.resourceenvironment.Deployment#getReplicas()
-     * @see #getDeployment()
-     * @generated
-     */
-    EAttribute getDeployment_Replicas();
-
-    /**
-     * Returns the meta object for the reference '{@link kubernetesModel.resourceenvironment.Deployment#getPodImageReference <em>Pod Image Reference</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Pod Image Reference</em>'.
-     * @see kubernetesModel.resourceenvironment.Deployment#getPodImageReference()
-     * @see #getDeployment()
-     * @generated
-     */
-    EReference getDeployment_PodImageReference();
-
-    /**
-     * Returns the meta object for the containment reference list '{@link kubernetesModel.resourceenvironment.Deployment#getAllocatedPods <em>Allocated Pods</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the containment reference list '<em>Allocated Pods</em>'.
-     * @see kubernetesModel.resourceenvironment.Deployment#getAllocatedPods()
-     * @see #getDeployment()
-     * @generated
-     */
-    EReference getDeployment_AllocatedPods();
-
-    /**
      * Returns the meta object for class '{@link kubernetesModel.resourceenvironment.RunningPodNestedResourceContainer <em>Running Pod Nested Resource Container</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -484,48 +375,6 @@ public interface ResourceenvironmentPackage extends EPackage {
          * @generated
          */
         EAttribute KUBERNETES_NODE__CPU = eINSTANCE.getKubernetesNode_Cpu();
-
-        /**
-         * The meta object literal for the '{@link kubernetesModel.resourceenvironment.impl.DeploymentImpl <em>Deployment</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see kubernetesModel.resourceenvironment.impl.DeploymentImpl
-         * @see kubernetesModel.resourceenvironment.impl.ResourceenvironmentPackageImpl#getDeployment()
-         * @generated
-         */
-        EClass DEPLOYMENT = eINSTANCE.getDeployment();
-
-        /**
-         * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EAttribute DEPLOYMENT__NAME = eINSTANCE.getDeployment_Name();
-
-        /**
-         * The meta object literal for the '<em><b>Replicas</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EAttribute DEPLOYMENT__REPLICAS = eINSTANCE.getDeployment_Replicas();
-
-        /**
-         * The meta object literal for the '<em><b>Pod Image Reference</b></em>' reference feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EReference DEPLOYMENT__POD_IMAGE_REFERENCE = eINSTANCE.getDeployment_PodImageReference();
-
-        /**
-         * The meta object literal for the '<em><b>Allocated Pods</b></em>' containment reference list feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EReference DEPLOYMENT__ALLOCATED_PODS = eINSTANCE.getDeployment_AllocatedPods();
 
         /**
          * The meta object literal for the '{@link kubernetesModel.resourceenvironment.impl.RunningPodNestedResourceContainerImpl <em>Running Pod Nested Resource Container</em>}' class.
