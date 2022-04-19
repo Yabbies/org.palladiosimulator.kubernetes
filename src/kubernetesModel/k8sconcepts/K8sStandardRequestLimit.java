@@ -2,7 +2,6 @@
  */
 package kubernetesModel.k8sconcepts;
 
-import java.math.BigInteger;
 
 /**
  * <!-- begin-user-doc -->
@@ -49,12 +48,12 @@ public interface K8sStandardRequestLimit extends AbstractK8sRequestLimit {
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the value of the '<em>Memory</em>' attribute.
-     * @see #setMemory(BigInteger)
+     * @see #setMemory(long)
      * @see kubernetesModel.k8sconcepts.K8sconceptsPackage#getK8sStandardRequestLimit_Memory()
      * @model
      * @generated
      */
-    BigInteger getMemory();
+    long getMemory();
 
     /**
      * Sets the value of the '{@link kubernetesModel.k8sconcepts.K8sStandardRequestLimit#getMemory <em>Memory</em>}' attribute.
@@ -64,6 +63,6 @@ public interface K8sStandardRequestLimit extends AbstractK8sRequestLimit {
      * @see #getMemory()
      * @generated
      */
-    void setMemory(BigInteger value);
+    void setMemory(long value);
 
 } // K8sStandardRequestLimit

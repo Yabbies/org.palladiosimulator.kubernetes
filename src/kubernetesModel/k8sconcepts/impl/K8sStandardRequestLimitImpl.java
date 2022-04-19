@@ -2,8 +2,6 @@
  */
 package kubernetesModel.k8sconcepts.impl;
 
-import java.math.BigInteger;
-
 import kubernetesModel.k8sconcepts.K8sStandardRequestLimit;
 import kubernetesModel.k8sconcepts.K8sconceptsPackage;
 
@@ -42,7 +40,7 @@ public class K8sStandardRequestLimitImpl extends AbstractK8sRequestLimitImpl imp
      * @generated
      * @ordered
      */
-    protected static final BigInteger MEMORY_EDEFAULT = null;
+    protected static final long MEMORY_EDEFAULT = 0L;
 
     /**
      * <!-- begin-user-doc -->
@@ -86,8 +84,8 @@ public class K8sStandardRequestLimitImpl extends AbstractK8sRequestLimitImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
-    public BigInteger getMemory() {
-        return (BigInteger)eDynamicGet(K8sconceptsPackage.K8S_STANDARD_REQUEST_LIMIT__MEMORY, K8sconceptsPackage.Literals.K8S_STANDARD_REQUEST_LIMIT__MEMORY, true, true);
+    public long getMemory() {
+        return (Long)eDynamicGet(K8sconceptsPackage.K8S_STANDARD_REQUEST_LIMIT__MEMORY, K8sconceptsPackage.Literals.K8S_STANDARD_REQUEST_LIMIT__MEMORY, true, true);
     }
 
     /**
@@ -95,7 +93,7 @@ public class K8sStandardRequestLimitImpl extends AbstractK8sRequestLimitImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
-    public void setMemory(BigInteger newMemory) {
+    public void setMemory(long newMemory) {
         eDynamicSet(K8sconceptsPackage.K8S_STANDARD_REQUEST_LIMIT__MEMORY, K8sconceptsPackage.Literals.K8S_STANDARD_REQUEST_LIMIT__MEMORY, newMemory);
     }
 
@@ -127,7 +125,7 @@ public class K8sStandardRequestLimitImpl extends AbstractK8sRequestLimitImpl imp
                 setCpu((Integer)newValue);
                 return;
             case K8sconceptsPackage.K8S_STANDARD_REQUEST_LIMIT__MEMORY:
-                setMemory((BigInteger)newValue);
+                setMemory((Long)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -162,7 +160,7 @@ public class K8sStandardRequestLimitImpl extends AbstractK8sRequestLimitImpl imp
             case K8sconceptsPackage.K8S_STANDARD_REQUEST_LIMIT__CPU:
                 return getCpu() != CPU_EDEFAULT;
             case K8sconceptsPackage.K8S_STANDARD_REQUEST_LIMIT__MEMORY:
-                return MEMORY_EDEFAULT == null ? getMemory() != null : !MEMORY_EDEFAULT.equals(getMemory());
+                return getMemory() != MEMORY_EDEFAULT;
         }
         return super.eIsSet(featureID);
     }

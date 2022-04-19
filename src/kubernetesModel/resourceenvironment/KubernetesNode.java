@@ -2,8 +2,6 @@
  */
 package kubernetesModel.resourceenvironment;
 
-import java.math.BigInteger;
-
 import org.palladiosimulator.pcm.resourceenvironment.ResourceContainer;
 
 /**
@@ -53,12 +51,12 @@ public interface KubernetesNode extends ResourceContainer {
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the value of the '<em>Memory</em>' attribute.
-     * @see #setMemory(BigInteger)
+     * @see #setMemory(long)
      * @see kubernetesModel.resourceenvironment.ResourceenvironmentPackage#getKubernetesNode_Memory()
      * @model
      * @generated
      */
-    BigInteger getMemory();
+    long getMemory();
 
     /**
      * Sets the value of the '{@link kubernetesModel.resourceenvironment.KubernetesNode#getMemory <em>Memory</em>}' attribute.
@@ -68,7 +66,7 @@ public interface KubernetesNode extends ResourceContainer {
      * @see #getMemory()
      * @generated
      */
-    void setMemory(BigInteger value);
+    void setMemory(long value);
 
     /**
      * Returns the value of the '<em><b>Cpu</b></em>' attribute.

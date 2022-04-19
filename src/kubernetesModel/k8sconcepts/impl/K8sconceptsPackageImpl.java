@@ -399,7 +399,7 @@ public class K8sconceptsPackageImpl extends EPackageImpl implements K8sconceptsP
 
         initEClass(k8sStandardRequestLimitEClass, K8sStandardRequestLimit.class, "K8sStandardRequestLimit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getK8sStandardRequestLimit_Cpu(), theEcorePackage.getEInt(), "cpu", null, 0, 1, K8sStandardRequestLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEAttribute(getK8sStandardRequestLimit_Memory(), theEcorePackage.getEBigInteger(), "memory", null, 0, 1, K8sStandardRequestLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getK8sStandardRequestLimit_Memory(), theEcorePackage.getELong(), "memory", null, 0, 1, K8sStandardRequestLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(k8sAdditionalRequestLimitEClass, K8sAdditionalRequestLimit.class, "K8sAdditionalRequestLimit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getK8sAdditionalRequestLimit_Specification(), theEcorePackage.getEString(), "specification", null, 0, 1, K8sAdditionalRequestLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
