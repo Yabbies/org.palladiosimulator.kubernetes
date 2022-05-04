@@ -22,6 +22,8 @@
     <eClassifiers xsi:type="ecore:EClass" name="Container" eSuperTypes="../../org.palladiosimulator.pcm/model/pcm.ecore#//repository/CompositeComponent">
       <eStructuralFeatures xsi:type="ecore:EReference" name="standardLimit" eType="#//k8sconcepts/K8sStandardRequestLimit"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="standardRequest" eType="#//k8sconcepts/K8sStandardRequestLimit"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="additionalRequestsLimits"
+          upperBound="-1" eType="#//k8sconcepts/AbstractK8sRequestLimit"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Pod" eSuperTypes="../../org.palladiosimulator.pcm/model/pcm.ecore#//subsystem/SubSystem">
       <eStructuralFeatures xsi:type="ecore:EReference" name="containers" upperBound="-1"
