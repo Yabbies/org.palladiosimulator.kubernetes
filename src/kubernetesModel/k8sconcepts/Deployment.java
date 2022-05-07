@@ -4,10 +4,6 @@ package kubernetesModel.k8sconcepts;
 
 import kubernetesModel.repository.Pod;
 
-import kubernetesModel.resourceenvironment.RunningPodNestedResourceContainer;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.palladiosimulator.pcm.core.entity.Entity;
 
 /**
@@ -21,7 +17,6 @@ import org.palladiosimulator.pcm.core.entity.Entity;
  * <ul>
  *   <li>{@link kubernetesModel.k8sconcepts.Deployment#getReplicas <em>Replicas</em>}</li>
  *   <li>{@link kubernetesModel.k8sconcepts.Deployment#getPodReference <em>Pod Reference</em>}</li>
- *   <li>{@link kubernetesModel.k8sconcepts.Deployment#getAllocatedPods <em>Allocated Pods</em>}</li>
  * </ul>
  *
  * @see kubernetesModel.k8sconcepts.K8sconceptsPackage#getDeployment()
@@ -73,17 +68,5 @@ public interface Deployment extends Entity {
      * @generated
      */
     void setPodReference(Pod value);
-
-    /**
-     * Returns the value of the '<em><b>Allocated Pods</b></em>' containment reference list.
-     * The list contents are of type {@link kubernetesModel.resourceenvironment.RunningPodNestedResourceContainer}.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Allocated Pods</em>' containment reference list.
-     * @see kubernetesModel.k8sconcepts.K8sconceptsPackage#getDeployment_AllocatedPods()
-     * @model containment="true"
-     * @generated
-     */
-    EList<RunningPodNestedResourceContainer> getAllocatedPods();
 
 } // Deployment

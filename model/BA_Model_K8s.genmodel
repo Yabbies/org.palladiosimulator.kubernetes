@@ -14,19 +14,18 @@
       <genClasses ecoreClass="BA_Model_K8s.ecore#//resourceenvironment/KubernetesNode">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BA_Model_K8s.ecore#//resourceenvironment/KubernetesNode/isMasterNode"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BA_Model_K8s.ecore#//resourceenvironment/KubernetesNode/memory"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BA_Model_K8s.ecore#//resourceenvironment/KubernetesNode/cpu"/>
-      </genClasses>
-      <genClasses ecoreClass="BA_Model_K8s.ecore#//resourceenvironment/RunningPodNestedResourceContainer">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BA_Model_K8s.ecore#//resourceenvironment/RunningPodNestedResourceContainer/selectorDeploymentReference"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BA_Model_K8s.ecore#//resourceenvironment/KubernetesNode/millicores"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Repository" disposableProviderFactory="true" childCreationExtenders="true"
         fileExtensions="repositoryk8s" ecorePackage="BA_Model_K8s.ecore#//repository">
       <genClasses ecoreClass="BA_Model_K8s.ecore#//repository/Container">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+        <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference BA_Model_K8s.ecore#//repository/Container/standardLimit"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+        <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference BA_Model_K8s.ecore#//repository/Container/standardRequest"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BA_Model_K8s.ecore#//repository/Container/additionalRequests"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BA_Model_K8s.ecore#//repository/Container/additionalLimits"/>
       </genClasses>
       <genClasses ecoreClass="BA_Model_K8s.ecore#//repository/Pod">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -39,7 +38,6 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BA_Model_K8s.ecore#//k8sconcepts/Deployment/replicas"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference BA_Model_K8s.ecore#//k8sconcepts/Deployment/podReference"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BA_Model_K8s.ecore#//k8sconcepts/Deployment/allocatedPods"/>
       </genClasses>
       <genClasses image="false" ecoreClass="BA_Model_K8s.ecore#//k8sconcepts/AbstractK8sRequestLimit"/>
       <genClasses ecoreClass="BA_Model_K8s.ecore#//k8sconcepts/K8sStandardRequestLimit">
@@ -48,9 +46,6 @@
       </genClasses>
       <genClasses ecoreClass="BA_Model_K8s.ecore#//k8sconcepts/K8sAdditionalRequestLimit">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BA_Model_K8s.ecore#//k8sconcepts/K8sAdditionalRequestLimit/specification"/>
-      </genClasses>
-      <genClasses ecoreClass="BA_Model_K8s.ecore#//k8sconcepts/RequestsLimitsRepository">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BA_Model_K8s.ecore#//k8sconcepts/RequestsLimitsRepository/requestsLimitsRepo"/>
       </genClasses>
       <genClasses ecoreClass="BA_Model_K8s.ecore#//k8sconcepts/Deployments">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BA_Model_K8s.ecore#//k8sconcepts/Deployments/deploymentInstances"/>

@@ -120,12 +120,6 @@ public class K8sconceptsSwitch<T> extends Switch<T> {
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
-            case K8sconceptsPackage.REQUESTS_LIMITS_REPOSITORY: {
-                RequestsLimitsRepository requestsLimitsRepository = (RequestsLimitsRepository)theEObject;
-                T result = caseRequestsLimitsRepository(requestsLimitsRepository);
-                if (result == null) result = defaultCase(theEObject);
-                return result;
-            }
             case K8sconceptsPackage.DEPLOYMENTS: {
                 Deployments deployments = (Deployments)theEObject;
                 T result = caseDeployments(deployments);
@@ -193,21 +187,6 @@ public class K8sconceptsSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseK8sAdditionalRequestLimit(K8sAdditionalRequestLimit object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Requests Limits Repository</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Requests Limits Repository</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseRequestsLimitsRepository(RequestsLimitsRepository object) {
         return null;
     }
 

@@ -17,7 +17,6 @@ import kubernetesModel.k8sconcepts.K8sAdditionalRequestLimit;
 import kubernetesModel.k8sconcepts.K8sStandardRequestLimit;
 import kubernetesModel.k8sconcepts.K8sconceptsFactory;
 import kubernetesModel.k8sconcepts.K8sconceptsPackage;
-import kubernetesModel.k8sconcepts.RequestsLimitsRepository;
 
 import kubernetesModel.repository.RepositoryPackage;
 
@@ -77,13 +76,6 @@ public class K8sconceptsPackageImpl extends EPackageImpl implements K8sconceptsP
      * @generated
      */
     private EClass k8sAdditionalRequestLimitEClass = null;
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    private EClass requestsLimitsRepositoryEClass = null;
 
     /**
      * <!-- begin-user-doc -->
@@ -207,15 +199,6 @@ public class K8sconceptsPackageImpl extends EPackageImpl implements K8sconceptsP
      * <!-- end-user-doc -->
      * @generated
      */
-    public EReference getDeployment_AllocatedPods() {
-        return (EReference)deploymentEClass.getEStructuralFeatures().get(2);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     public EClass getAbstractK8sRequestLimit() {
         return abstractK8sRequestLimitEClass;
     }
@@ -270,24 +253,6 @@ public class K8sconceptsPackageImpl extends EPackageImpl implements K8sconceptsP
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getRequestsLimitsRepository() {
-        return requestsLimitsRepositoryEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EReference getRequestsLimitsRepository_RequestsLimitsRepo() {
-        return (EReference)requestsLimitsRepositoryEClass.getEStructuralFeatures().get(0);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     public EClass getDeployments() {
         return deploymentsEClass;
     }
@@ -332,7 +297,6 @@ public class K8sconceptsPackageImpl extends EPackageImpl implements K8sconceptsP
         deploymentEClass = createEClass(DEPLOYMENT);
         createEAttribute(deploymentEClass, DEPLOYMENT__REPLICAS);
         createEReference(deploymentEClass, DEPLOYMENT__POD_REFERENCE);
-        createEReference(deploymentEClass, DEPLOYMENT__ALLOCATED_PODS);
 
         abstractK8sRequestLimitEClass = createEClass(ABSTRACT_K8S_REQUEST_LIMIT);
 
@@ -342,9 +306,6 @@ public class K8sconceptsPackageImpl extends EPackageImpl implements K8sconceptsP
 
         k8sAdditionalRequestLimitEClass = createEClass(K8S_ADDITIONAL_REQUEST_LIMIT);
         createEAttribute(k8sAdditionalRequestLimitEClass, K8S_ADDITIONAL_REQUEST_LIMIT__SPECIFICATION);
-
-        requestsLimitsRepositoryEClass = createEClass(REQUESTS_LIMITS_REPOSITORY);
-        createEReference(requestsLimitsRepositoryEClass, REQUESTS_LIMITS_REPOSITORY__REQUESTS_LIMITS_REPO);
 
         deploymentsEClass = createEClass(DEPLOYMENTS);
         createEReference(deploymentsEClass, DEPLOYMENTS__DEPLOYMENT_INSTANCES);
@@ -377,7 +338,6 @@ public class K8sconceptsPackageImpl extends EPackageImpl implements K8sconceptsP
         EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
         EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
         RepositoryPackage theRepositoryPackage = (RepositoryPackage)EPackage.Registry.INSTANCE.getEPackage(RepositoryPackage.eNS_URI);
-        ResourceenvironmentPackage theResourceenvironmentPackage = (ResourceenvironmentPackage)EPackage.Registry.INSTANCE.getEPackage(ResourceenvironmentPackage.eNS_URI);
 
         // Create type parameters
 
@@ -393,7 +353,6 @@ public class K8sconceptsPackageImpl extends EPackageImpl implements K8sconceptsP
         initEClass(deploymentEClass, Deployment.class, "Deployment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getDeployment_Replicas(), theEcorePackage.getEInt(), "replicas", "1", 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getDeployment_PodReference(), theRepositoryPackage.getPod(), null, "podReference", null, 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEReference(getDeployment_AllocatedPods(), theResourceenvironmentPackage.getRunningPodNestedResourceContainer(), null, "allocatedPods", null, 0, -1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(abstractK8sRequestLimitEClass, AbstractK8sRequestLimit.class, "AbstractK8sRequestLimit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -403,9 +362,6 @@ public class K8sconceptsPackageImpl extends EPackageImpl implements K8sconceptsP
 
         initEClass(k8sAdditionalRequestLimitEClass, K8sAdditionalRequestLimit.class, "K8sAdditionalRequestLimit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getK8sAdditionalRequestLimit_Specification(), theEcorePackage.getEString(), "specification", null, 0, 1, K8sAdditionalRequestLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-        initEClass(requestsLimitsRepositoryEClass, RequestsLimitsRepository.class, "RequestsLimitsRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getRequestsLimitsRepository_RequestsLimitsRepo(), this.getAbstractK8sRequestLimit(), null, "requestsLimitsRepo", null, 0, -1, RequestsLimitsRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
         initEClass(deploymentsEClass, Deployments.class, "Deployments", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getDeployments_DeploymentInstances(), this.getDeployment(), null, "deploymentInstances", null, 0, -1, Deployments.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

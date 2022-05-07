@@ -2,23 +2,12 @@
  */
 package kubernetesModel.k8sconcepts.impl;
 
-import java.util.Collection;
-
 import kubernetesModel.k8sconcepts.Deployment;
 import kubernetesModel.k8sconcepts.K8sconceptsPackage;
 
 import kubernetesModel.repository.Pod;
 
-import kubernetesModel.resourceenvironment.RunningPodNestedResourceContainer;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.palladiosimulator.pcm.core.entity.impl.EntityImpl;
 
@@ -32,7 +21,6 @@ import org.palladiosimulator.pcm.core.entity.impl.EntityImpl;
  * <ul>
  *   <li>{@link kubernetesModel.k8sconcepts.impl.DeploymentImpl#getReplicas <em>Replicas</em>}</li>
  *   <li>{@link kubernetesModel.k8sconcepts.impl.DeploymentImpl#getPodReference <em>Pod Reference</em>}</li>
- *   <li>{@link kubernetesModel.k8sconcepts.impl.DeploymentImpl#getAllocatedPods <em>Allocated Pods</em>}</li>
  * </ul>
  *
  * @generated
@@ -117,30 +105,6 @@ public class DeploymentImpl extends EntityImpl implements Deployment {
      * <!-- end-user-doc -->
      * @generated
      */
-    @SuppressWarnings("unchecked")
-    public EList<RunningPodNestedResourceContainer> getAllocatedPods() {
-        return (EList<RunningPodNestedResourceContainer>)eDynamicGet(K8sconceptsPackage.DEPLOYMENT__ALLOCATED_PODS, K8sconceptsPackage.Literals.DEPLOYMENT__ALLOCATED_PODS, true, true);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case K8sconceptsPackage.DEPLOYMENT__ALLOCATED_PODS:
-                return ((InternalEList<?>)getAllocatedPods()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
@@ -149,8 +113,6 @@ public class DeploymentImpl extends EntityImpl implements Deployment {
             case K8sconceptsPackage.DEPLOYMENT__POD_REFERENCE:
                 if (resolve) return getPodReference();
                 return basicGetPodReference();
-            case K8sconceptsPackage.DEPLOYMENT__ALLOCATED_PODS:
-                return getAllocatedPods();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -160,7 +122,6 @@ public class DeploymentImpl extends EntityImpl implements Deployment {
      * <!-- end-user-doc -->
      * @generated
      */
-    @SuppressWarnings("unchecked")
     @Override
     public void eSet(int featureID, Object newValue) {
         switch (featureID) {
@@ -169,10 +130,6 @@ public class DeploymentImpl extends EntityImpl implements Deployment {
                 return;
             case K8sconceptsPackage.DEPLOYMENT__POD_REFERENCE:
                 setPodReference((Pod)newValue);
-                return;
-            case K8sconceptsPackage.DEPLOYMENT__ALLOCATED_PODS:
-                getAllocatedPods().clear();
-                getAllocatedPods().addAll((Collection<? extends RunningPodNestedResourceContainer>)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -192,9 +149,6 @@ public class DeploymentImpl extends EntityImpl implements Deployment {
             case K8sconceptsPackage.DEPLOYMENT__POD_REFERENCE:
                 setPodReference((Pod)null);
                 return;
-            case K8sconceptsPackage.DEPLOYMENT__ALLOCATED_PODS:
-                getAllocatedPods().clear();
-                return;
         }
         super.eUnset(featureID);
     }
@@ -211,8 +165,6 @@ public class DeploymentImpl extends EntityImpl implements Deployment {
                 return getReplicas() != REPLICAS_EDEFAULT;
             case K8sconceptsPackage.DEPLOYMENT__POD_REFERENCE:
                 return basicGetPodReference() != null;
-            case K8sconceptsPackage.DEPLOYMENT__ALLOCATED_PODS:
-                return !getAllocatedPods().isEmpty();
         }
         return super.eIsSet(featureID);
     }

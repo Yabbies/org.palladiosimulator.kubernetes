@@ -19,7 +19,7 @@ import org.palladiosimulator.pcm.resourceenvironment.impl.ResourceContainerImpl;
  * <ul>
  *   <li>{@link kubernetesModel.resourceenvironment.impl.KubernetesNodeImpl#isIsMasterNode <em>Is Master Node</em>}</li>
  *   <li>{@link kubernetesModel.resourceenvironment.impl.KubernetesNodeImpl#getMemory <em>Memory</em>}</li>
- *   <li>{@link kubernetesModel.resourceenvironment.impl.KubernetesNodeImpl#getCpu <em>Cpu</em>}</li>
+ *   <li>{@link kubernetesModel.resourceenvironment.impl.KubernetesNodeImpl#getMillicores <em>Millicores</em>}</li>
  * </ul>
  *
  * @generated
@@ -46,14 +46,14 @@ public class KubernetesNodeImpl extends ResourceContainerImpl implements Kuberne
     protected static final long MEMORY_EDEFAULT = 0L;
 
     /**
-     * The default value of the '{@link #getCpu() <em>Cpu</em>}' attribute.
+     * The default value of the '{@link #getMillicores() <em>Millicores</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getCpu()
+     * @see #getMillicores()
      * @generated
      * @ordered
      */
-    protected static final int CPU_EDEFAULT = 0;
+    protected static final int MILLICORES_EDEFAULT = 0;
 
     /**
      * <!-- begin-user-doc -->
@@ -115,8 +115,8 @@ public class KubernetesNodeImpl extends ResourceContainerImpl implements Kuberne
      * <!-- end-user-doc -->
      * @generated
      */
-    public int getCpu() {
-        return (Integer)eDynamicGet(ResourceenvironmentPackage.KUBERNETES_NODE__CPU, ResourceenvironmentPackage.Literals.KUBERNETES_NODE__CPU, true, true);
+    public int getMillicores() {
+        return (Integer)eDynamicGet(ResourceenvironmentPackage.KUBERNETES_NODE__MILLICORES, ResourceenvironmentPackage.Literals.KUBERNETES_NODE__MILLICORES, true, true);
     }
 
     /**
@@ -124,8 +124,8 @@ public class KubernetesNodeImpl extends ResourceContainerImpl implements Kuberne
      * <!-- end-user-doc -->
      * @generated
      */
-    public void setCpu(int newCpu) {
-        eDynamicSet(ResourceenvironmentPackage.KUBERNETES_NODE__CPU, ResourceenvironmentPackage.Literals.KUBERNETES_NODE__CPU, newCpu);
+    public void setMillicores(int newMillicores) {
+        eDynamicSet(ResourceenvironmentPackage.KUBERNETES_NODE__MILLICORES, ResourceenvironmentPackage.Literals.KUBERNETES_NODE__MILLICORES, newMillicores);
     }
 
     /**
@@ -140,8 +140,8 @@ public class KubernetesNodeImpl extends ResourceContainerImpl implements Kuberne
                 return isIsMasterNode();
             case ResourceenvironmentPackage.KUBERNETES_NODE__MEMORY:
                 return getMemory();
-            case ResourceenvironmentPackage.KUBERNETES_NODE__CPU:
-                return getCpu();
+            case ResourceenvironmentPackage.KUBERNETES_NODE__MILLICORES:
+                return getMillicores();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -160,8 +160,8 @@ public class KubernetesNodeImpl extends ResourceContainerImpl implements Kuberne
             case ResourceenvironmentPackage.KUBERNETES_NODE__MEMORY:
                 setMemory((Long)newValue);
                 return;
-            case ResourceenvironmentPackage.KUBERNETES_NODE__CPU:
-                setCpu((Integer)newValue);
+            case ResourceenvironmentPackage.KUBERNETES_NODE__MILLICORES:
+                setMillicores((Integer)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -181,8 +181,8 @@ public class KubernetesNodeImpl extends ResourceContainerImpl implements Kuberne
             case ResourceenvironmentPackage.KUBERNETES_NODE__MEMORY:
                 setMemory(MEMORY_EDEFAULT);
                 return;
-            case ResourceenvironmentPackage.KUBERNETES_NODE__CPU:
-                setCpu(CPU_EDEFAULT);
+            case ResourceenvironmentPackage.KUBERNETES_NODE__MILLICORES:
+                setMillicores(MILLICORES_EDEFAULT);
                 return;
         }
         super.eUnset(featureID);
@@ -200,8 +200,8 @@ public class KubernetesNodeImpl extends ResourceContainerImpl implements Kuberne
                 return isIsMasterNode() != IS_MASTER_NODE_EDEFAULT;
             case ResourceenvironmentPackage.KUBERNETES_NODE__MEMORY:
                 return getMemory() != MEMORY_EDEFAULT;
-            case ResourceenvironmentPackage.KUBERNETES_NODE__CPU:
-                return getCpu() != CPU_EDEFAULT;
+            case ResourceenvironmentPackage.KUBERNETES_NODE__MILLICORES:
+                return getMillicores() != MILLICORES_EDEFAULT;
         }
         return super.eIsSet(featureID);
     }

@@ -82,10 +82,6 @@ public class ResourceenvironmentAdapterFactory extends AdapterFactoryImpl {
                 return createKubernetesNodeAdapter();
             }
             @Override
-            public Adapter caseRunningPodNestedResourceContainer(RunningPodNestedResourceContainer object) {
-                return createRunningPodNestedResourceContainerAdapter();
-            }
-            @Override
             public Adapter caseIdentifier(Identifier object) {
                 return createIdentifierAdapter();
             }
@@ -140,20 +136,6 @@ public class ResourceenvironmentAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createKubernetesNodeAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link kubernetesModel.resourceenvironment.RunningPodNestedResourceContainer <em>Running Pod Nested Resource Container</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see kubernetesModel.resourceenvironment.RunningPodNestedResourceContainer
-     * @generated
-     */
-    public Adapter createRunningPodNestedResourceContainerAdapter() {
         return null;
     }
 

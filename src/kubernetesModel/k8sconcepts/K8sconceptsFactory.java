@@ -49,15 +49,6 @@ public interface K8sconceptsFactory extends EFactory {
     K8sAdditionalRequestLimit createK8sAdditionalRequestLimit();
 
     /**
-     * Returns a new object of class '<em>Requests Limits Repository</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Requests Limits Repository</em>'.
-     * @generated
-     */
-    RequestsLimitsRepository createRequestsLimitsRepository();
-
-    /**
      * Returns a new object of class '<em>Deployments</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

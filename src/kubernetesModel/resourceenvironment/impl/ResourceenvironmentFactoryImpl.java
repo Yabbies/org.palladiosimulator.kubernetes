@@ -57,7 +57,6 @@ public class ResourceenvironmentFactoryImpl extends EFactoryImpl implements Reso
     public EObject create(EClass eClass) {
         switch (eClass.getClassifierID()) {
             case ResourceenvironmentPackage.KUBERNETES_NODE: return createKubernetesNode();
-            case ResourceenvironmentPackage.RUNNING_POD_NESTED_RESOURCE_CONTAINER: return createRunningPodNestedResourceContainer();
             default:
                 throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -71,16 +70,6 @@ public class ResourceenvironmentFactoryImpl extends EFactoryImpl implements Reso
     public KubernetesNode createKubernetesNode() {
         KubernetesNodeImpl kubernetesNode = new KubernetesNodeImpl();
         return kubernetesNode;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public RunningPodNestedResourceContainer createRunningPodNestedResourceContainer() {
-        RunningPodNestedResourceContainerImpl runningPodNestedResourceContainer = new RunningPodNestedResourceContainerImpl();
-        return runningPodNestedResourceContainer;
     }
 
     /**

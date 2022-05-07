@@ -59,7 +59,6 @@ public class K8sconceptsFactoryImpl extends EFactoryImpl implements K8sconceptsF
             case K8sconceptsPackage.DEPLOYMENT: return createDeployment();
             case K8sconceptsPackage.K8S_STANDARD_REQUEST_LIMIT: return createK8sStandardRequestLimit();
             case K8sconceptsPackage.K8S_ADDITIONAL_REQUEST_LIMIT: return createK8sAdditionalRequestLimit();
-            case K8sconceptsPackage.REQUESTS_LIMITS_REPOSITORY: return (EObject)createRequestsLimitsRepository();
             case K8sconceptsPackage.DEPLOYMENTS: return (EObject)createDeployments();
             default:
                 throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -94,16 +93,6 @@ public class K8sconceptsFactoryImpl extends EFactoryImpl implements K8sconceptsF
     public K8sAdditionalRequestLimit createK8sAdditionalRequestLimit() {
         K8sAdditionalRequestLimitImpl k8sAdditionalRequestLimit = new K8sAdditionalRequestLimitImpl();
         return k8sAdditionalRequestLimit;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public RequestsLimitsRepository createRequestsLimitsRepository() {
-        RequestsLimitsRepositoryImpl requestsLimitsRepository = new RequestsLimitsRepositoryImpl();
-        return requestsLimitsRepository;
     }
 
     /**

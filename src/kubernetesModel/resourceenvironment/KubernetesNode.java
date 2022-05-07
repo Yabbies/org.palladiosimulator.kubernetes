@@ -15,7 +15,7 @@ import org.palladiosimulator.pcm.resourceenvironment.ResourceContainer;
  * <ul>
  *   <li>{@link kubernetesModel.resourceenvironment.KubernetesNode#isIsMasterNode <em>Is Master Node</em>}</li>
  *   <li>{@link kubernetesModel.resourceenvironment.KubernetesNode#getMemory <em>Memory</em>}</li>
- *   <li>{@link kubernetesModel.resourceenvironment.KubernetesNode#getCpu <em>Cpu</em>}</li>
+ *   <li>{@link kubernetesModel.resourceenvironment.KubernetesNode#getMillicores <em>Millicores</em>}</li>
  * </ul>
  *
  * @see kubernetesModel.resourceenvironment.ResourceenvironmentPackage#getKubernetesNode()
@@ -69,25 +69,25 @@ public interface KubernetesNode extends ResourceContainer {
     void setMemory(long value);
 
     /**
-     * Returns the value of the '<em><b>Cpu</b></em>' attribute.
+     * Returns the value of the '<em><b>Millicores</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Cpu</em>' attribute.
-     * @see #setCpu(int)
-     * @see kubernetesModel.resourceenvironment.ResourceenvironmentPackage#getKubernetesNode_Cpu()
+     * @return the value of the '<em>Millicores</em>' attribute.
+     * @see #setMillicores(int)
+     * @see kubernetesModel.resourceenvironment.ResourceenvironmentPackage#getKubernetesNode_Millicores()
      * @model
      * @generated
      */
-    int getCpu();
+    int getMillicores();
 
     /**
-     * Sets the value of the '{@link kubernetesModel.resourceenvironment.KubernetesNode#getCpu <em>Cpu</em>}' attribute.
+     * Sets the value of the '{@link kubernetesModel.resourceenvironment.KubernetesNode#getMillicores <em>Millicores</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Cpu</em>' attribute.
-     * @see #getCpu()
+     * @param value the new value of the '<em>Millicores</em>' attribute.
+     * @see #getMillicores()
      * @generated
      */
-    void setCpu(int value);
+    void setMillicores(int value);
 
 } // KubernetesNode

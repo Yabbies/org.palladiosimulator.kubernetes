@@ -21,7 +21,6 @@ import kubernetesModel.repository.impl.RepositoryPackageImpl;
 import kubernetesModel.resourceenvironment.KubernetesNode;
 import kubernetesModel.resourceenvironment.ResourceenvironmentFactory;
 import kubernetesModel.resourceenvironment.ResourceenvironmentPackage;
-import kubernetesModel.resourceenvironment.RunningPodNestedResourceContainer;
 
 import kubernetesModel.system.SystemPackage;
 
@@ -30,7 +29,6 @@ import kubernetesModel.system.impl.SystemPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
@@ -50,13 +48,6 @@ public class ResourceenvironmentPackageImpl extends EPackageImpl implements Reso
      * @generated
      */
     private EClass kubernetesNodeEClass = null;
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    private EClass runningPodNestedResourceContainerEClass = null;
 
     /**
      * Creates an instance of the model <b>Package</b>, registered with
@@ -173,26 +164,8 @@ public class ResourceenvironmentPackageImpl extends EPackageImpl implements Reso
      * <!-- end-user-doc -->
      * @generated
      */
-    public EAttribute getKubernetesNode_Cpu() {
+    public EAttribute getKubernetesNode_Millicores() {
         return (EAttribute)kubernetesNodeEClass.getEStructuralFeatures().get(2);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EClass getRunningPodNestedResourceContainer() {
-        return runningPodNestedResourceContainerEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EReference getRunningPodNestedResourceContainer_SelectorDeploymentReference() {
-        return (EReference)runningPodNestedResourceContainerEClass.getEStructuralFeatures().get(0);
     }
 
     /**
@@ -226,10 +199,7 @@ public class ResourceenvironmentPackageImpl extends EPackageImpl implements Reso
         kubernetesNodeEClass = createEClass(KUBERNETES_NODE);
         createEAttribute(kubernetesNodeEClass, KUBERNETES_NODE__IS_MASTER_NODE);
         createEAttribute(kubernetesNodeEClass, KUBERNETES_NODE__MEMORY);
-        createEAttribute(kubernetesNodeEClass, KUBERNETES_NODE__CPU);
-
-        runningPodNestedResourceContainerEClass = createEClass(RUNNING_POD_NESTED_RESOURCE_CONTAINER);
-        createEReference(runningPodNestedResourceContainerEClass, RUNNING_POD_NESTED_RESOURCE_CONTAINER__SELECTOR_DEPLOYMENT_REFERENCE);
+        createEAttribute(kubernetesNodeEClass, KUBERNETES_NODE__MILLICORES);
     }
 
     /**
@@ -258,7 +228,6 @@ public class ResourceenvironmentPackageImpl extends EPackageImpl implements Reso
         // Obtain other dependent packages
         org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentPackage theResourceenvironmentPackage_1 = (org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentPackage)EPackage.Registry.INSTANCE.getEPackage(org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentPackage.eNS_URI);
         EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
-        K8sconceptsPackage theK8sconceptsPackage = (K8sconceptsPackage)EPackage.Registry.INSTANCE.getEPackage(K8sconceptsPackage.eNS_URI);
 
         // Create type parameters
 
@@ -266,16 +235,12 @@ public class ResourceenvironmentPackageImpl extends EPackageImpl implements Reso
 
         // Add supertypes to classes
         kubernetesNodeEClass.getESuperTypes().add(theResourceenvironmentPackage_1.getResourceContainer());
-        runningPodNestedResourceContainerEClass.getESuperTypes().add(theResourceenvironmentPackage_1.getResourceContainer());
 
         // Initialize classes and features; add operations and parameters
         initEClass(kubernetesNodeEClass, KubernetesNode.class, "KubernetesNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getKubernetesNode_IsMasterNode(), theEcorePackage.getEBoolean(), "isMasterNode", "false", 1, 1, KubernetesNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getKubernetesNode_Memory(), theEcorePackage.getELong(), "memory", null, 0, 1, KubernetesNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEAttribute(getKubernetesNode_Cpu(), theEcorePackage.getEInt(), "cpu", null, 0, 1, KubernetesNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-        initEClass(runningPodNestedResourceContainerEClass, RunningPodNestedResourceContainer.class, "RunningPodNestedResourceContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getRunningPodNestedResourceContainer_SelectorDeploymentReference(), theK8sconceptsPackage.getDeployment(), null, "selectorDeploymentReference", null, 0, 1, RunningPodNestedResourceContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getKubernetesNode_Millicores(), theEcorePackage.getEInt(), "millicores", null, 0, 1, KubernetesNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         // Create resource
         createResource(eNS_URI);

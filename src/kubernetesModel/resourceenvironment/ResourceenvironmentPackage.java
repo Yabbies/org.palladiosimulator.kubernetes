@@ -5,7 +5,6 @@ package kubernetesModel.resourceenvironment;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -147,13 +146,13 @@ public interface ResourceenvironmentPackage extends EPackage {
     int KUBERNETES_NODE__MEMORY = org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentPackage.RESOURCE_CONTAINER_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Cpu</b></em>' attribute.
+     * The feature id for the '<em><b>Millicores</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int KUBERNETES_NODE__CPU = org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentPackage.RESOURCE_CONTAINER_FEATURE_COUNT + 2;
+    int KUBERNETES_NODE__MILLICORES = org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentPackage.RESOURCE_CONTAINER_FEATURE_COUNT + 2;
 
     /**
      * The number of structural features of the '<em>Kubernetes Node</em>' class.
@@ -163,97 +162,6 @@ public interface ResourceenvironmentPackage extends EPackage {
      * @ordered
      */
     int KUBERNETES_NODE_FEATURE_COUNT = org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentPackage.RESOURCE_CONTAINER_FEATURE_COUNT + 3;
-
-    /**
-     * The meta object id for the '{@link kubernetesModel.resourceenvironment.impl.RunningPodNestedResourceContainerImpl <em>Running Pod Nested Resource Container</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see kubernetesModel.resourceenvironment.impl.RunningPodNestedResourceContainerImpl
-     * @see kubernetesModel.resourceenvironment.impl.ResourceenvironmentPackageImpl#getRunningPodNestedResourceContainer()
-     * @generated
-     */
-    int RUNNING_POD_NESTED_RESOURCE_CONTAINER = 1;
-
-    /**
-     * The feature id for the '<em><b>Id</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int RUNNING_POD_NESTED_RESOURCE_CONTAINER__ID = org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentPackage.RESOURCE_CONTAINER__ID;
-
-    /**
-     * The feature id for the '<em><b>Entity Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int RUNNING_POD_NESTED_RESOURCE_CONTAINER__ENTITY_NAME = org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentPackage.RESOURCE_CONTAINER__ENTITY_NAME;
-
-    /**
-     * The feature id for the '<em><b>Active Resource Specifications Resource Container</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int RUNNING_POD_NESTED_RESOURCE_CONTAINER__ACTIVE_RESOURCE_SPECIFICATIONS_RESOURCE_CONTAINER = org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentPackage.RESOURCE_CONTAINER__ACTIVE_RESOURCE_SPECIFICATIONS_RESOURCE_CONTAINER;
-
-    /**
-     * The feature id for the '<em><b>Resource Environment Resource Container</b></em>' container reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int RUNNING_POD_NESTED_RESOURCE_CONTAINER__RESOURCE_ENVIRONMENT_RESOURCE_CONTAINER = org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentPackage.RESOURCE_CONTAINER__RESOURCE_ENVIRONMENT_RESOURCE_CONTAINER;
-
-    /**
-     * The feature id for the '<em><b>Nested Resource Containers Resource Container</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int RUNNING_POD_NESTED_RESOURCE_CONTAINER__NESTED_RESOURCE_CONTAINERS_RESOURCE_CONTAINER = org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentPackage.RESOURCE_CONTAINER__NESTED_RESOURCE_CONTAINERS_RESOURCE_CONTAINER;
-
-    /**
-     * The feature id for the '<em><b>Parent Resource Container Resource Container</b></em>' container reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int RUNNING_POD_NESTED_RESOURCE_CONTAINER__PARENT_RESOURCE_CONTAINER_RESOURCE_CONTAINER = org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentPackage.RESOURCE_CONTAINER__PARENT_RESOURCE_CONTAINER_RESOURCE_CONTAINER;
-
-    /**
-     * The feature id for the '<em><b>Hdd Resource Specifications</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int RUNNING_POD_NESTED_RESOURCE_CONTAINER__HDD_RESOURCE_SPECIFICATIONS = org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentPackage.RESOURCE_CONTAINER__HDD_RESOURCE_SPECIFICATIONS;
-
-    /**
-     * The feature id for the '<em><b>Selector Deployment Reference</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int RUNNING_POD_NESTED_RESOURCE_CONTAINER__SELECTOR_DEPLOYMENT_REFERENCE = org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentPackage.RESOURCE_CONTAINER_FEATURE_COUNT + 0;
-
-    /**
-     * The number of structural features of the '<em>Running Pod Nested Resource Container</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int RUNNING_POD_NESTED_RESOURCE_CONTAINER_FEATURE_COUNT = org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentPackage.RESOURCE_CONTAINER_FEATURE_COUNT + 1;
 
 
     /**
@@ -289,36 +197,15 @@ public interface ResourceenvironmentPackage extends EPackage {
     EAttribute getKubernetesNode_Memory();
 
     /**
-     * Returns the meta object for the attribute '{@link kubernetesModel.resourceenvironment.KubernetesNode#getCpu <em>Cpu</em>}'.
+     * Returns the meta object for the attribute '{@link kubernetesModel.resourceenvironment.KubernetesNode#getMillicores <em>Millicores</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Cpu</em>'.
-     * @see kubernetesModel.resourceenvironment.KubernetesNode#getCpu()
+     * @return the meta object for the attribute '<em>Millicores</em>'.
+     * @see kubernetesModel.resourceenvironment.KubernetesNode#getMillicores()
      * @see #getKubernetesNode()
      * @generated
      */
-    EAttribute getKubernetesNode_Cpu();
-
-    /**
-     * Returns the meta object for class '{@link kubernetesModel.resourceenvironment.RunningPodNestedResourceContainer <em>Running Pod Nested Resource Container</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Running Pod Nested Resource Container</em>'.
-     * @see kubernetesModel.resourceenvironment.RunningPodNestedResourceContainer
-     * @generated
-     */
-    EClass getRunningPodNestedResourceContainer();
-
-    /**
-     * Returns the meta object for the containment reference '{@link kubernetesModel.resourceenvironment.RunningPodNestedResourceContainer#getSelectorDeploymentReference <em>Selector Deployment Reference</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the containment reference '<em>Selector Deployment Reference</em>'.
-     * @see kubernetesModel.resourceenvironment.RunningPodNestedResourceContainer#getSelectorDeploymentReference()
-     * @see #getRunningPodNestedResourceContainer()
-     * @generated
-     */
-    EReference getRunningPodNestedResourceContainer_SelectorDeploymentReference();
+    EAttribute getKubernetesNode_Millicores();
 
     /**
      * Returns the factory that creates the instances of the model.
@@ -369,30 +256,12 @@ public interface ResourceenvironmentPackage extends EPackage {
         EAttribute KUBERNETES_NODE__MEMORY = eINSTANCE.getKubernetesNode_Memory();
 
         /**
-         * The meta object literal for the '<em><b>Cpu</b></em>' attribute feature.
+         * The meta object literal for the '<em><b>Millicores</b></em>' attribute feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
          */
-        EAttribute KUBERNETES_NODE__CPU = eINSTANCE.getKubernetesNode_Cpu();
-
-        /**
-         * The meta object literal for the '{@link kubernetesModel.resourceenvironment.impl.RunningPodNestedResourceContainerImpl <em>Running Pod Nested Resource Container</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see kubernetesModel.resourceenvironment.impl.RunningPodNestedResourceContainerImpl
-         * @see kubernetesModel.resourceenvironment.impl.ResourceenvironmentPackageImpl#getRunningPodNestedResourceContainer()
-         * @generated
-         */
-        EClass RUNNING_POD_NESTED_RESOURCE_CONTAINER = eINSTANCE.getRunningPodNestedResourceContainer();
-
-        /**
-         * The meta object literal for the '<em><b>Selector Deployment Reference</b></em>' containment reference feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EReference RUNNING_POD_NESTED_RESOURCE_CONTAINER__SELECTOR_DEPLOYMENT_REFERENCE = eINSTANCE.getRunningPodNestedResourceContainer_SelectorDeploymentReference();
+        EAttribute KUBERNETES_NODE__MILLICORES = eINSTANCE.getKubernetesNode_Millicores();
 
     }
 

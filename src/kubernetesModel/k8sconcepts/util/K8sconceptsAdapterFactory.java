@@ -92,10 +92,6 @@ public class K8sconceptsAdapterFactory extends AdapterFactoryImpl {
                 return createK8sAdditionalRequestLimitAdapter();
             }
             @Override
-            public Adapter caseRequestsLimitsRepository(RequestsLimitsRepository object) {
-                return createRequestsLimitsRepositoryAdapter();
-            }
-            @Override
             public Adapter caseDeployments(Deployments object) {
                 return createDeploymentsAdapter();
             }
@@ -192,20 +188,6 @@ public class K8sconceptsAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createK8sAdditionalRequestLimitAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link kubernetesModel.k8sconcepts.RequestsLimitsRepository <em>Requests Limits Repository</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see kubernetesModel.k8sconcepts.RequestsLimitsRepository
-     * @generated
-     */
-    public Adapter createRequestsLimitsRepositoryAdapter() {
         return null;
     }
 

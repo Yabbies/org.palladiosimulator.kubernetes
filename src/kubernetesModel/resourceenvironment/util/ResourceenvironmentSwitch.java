@@ -88,18 +88,6 @@ public class ResourceenvironmentSwitch<T> extends Switch<T> {
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
-            case ResourceenvironmentPackage.RUNNING_POD_NESTED_RESOURCE_CONTAINER: {
-                RunningPodNestedResourceContainer runningPodNestedResourceContainer = (RunningPodNestedResourceContainer)theEObject;
-                T result = caseRunningPodNestedResourceContainer(runningPodNestedResourceContainer);
-                if (result == null) result = caseResourceContainer(runningPodNestedResourceContainer);
-                if (result == null) result = caseEntity(runningPodNestedResourceContainer);
-                if (result == null) result = caseIdentifier(runningPodNestedResourceContainer);
-                if (result == null) result = caseNamedElement(runningPodNestedResourceContainer);
-                if (result == null) result = casePCMBaseClass(runningPodNestedResourceContainer);
-                if (result == null) result = casePCMClass(runningPodNestedResourceContainer);
-                if (result == null) result = defaultCase(theEObject);
-                return result;
-            }
             default: return defaultCase(theEObject);
         }
     }
@@ -116,21 +104,6 @@ public class ResourceenvironmentSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseKubernetesNode(KubernetesNode object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Running Pod Nested Resource Container</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Running Pod Nested Resource Container</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseRunningPodNestedResourceContainer(RunningPodNestedResourceContainer object) {
         return null;
     }
 

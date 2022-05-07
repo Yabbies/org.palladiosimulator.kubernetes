@@ -184,7 +184,7 @@ public interface RepositoryPackage extends EPackage {
     int CONTAINER__COMPONENT_TYPE = org.palladiosimulator.pcm.repository.RepositoryPackage.COMPOSITE_COMPONENT__COMPONENT_TYPE;
 
     /**
-     * The feature id for the '<em><b>Standard Limit</b></em>' reference.
+     * The feature id for the '<em><b>Standard Limit</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -193,7 +193,7 @@ public interface RepositoryPackage extends EPackage {
     int CONTAINER__STANDARD_LIMIT = org.palladiosimulator.pcm.repository.RepositoryPackage.COMPOSITE_COMPONENT_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Standard Request</b></em>' reference.
+     * The feature id for the '<em><b>Standard Request</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -202,13 +202,31 @@ public interface RepositoryPackage extends EPackage {
     int CONTAINER__STANDARD_REQUEST = org.palladiosimulator.pcm.repository.RepositoryPackage.COMPOSITE_COMPONENT_FEATURE_COUNT + 1;
 
     /**
+     * The feature id for the '<em><b>Additional Requests</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTAINER__ADDITIONAL_REQUESTS = org.palladiosimulator.pcm.repository.RepositoryPackage.COMPOSITE_COMPONENT_FEATURE_COUNT + 2;
+
+    /**
+     * The feature id for the '<em><b>Additional Limits</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTAINER__ADDITIONAL_LIMITS = org.palladiosimulator.pcm.repository.RepositoryPackage.COMPOSITE_COMPONENT_FEATURE_COUNT + 3;
+
+    /**
      * The number of structural features of the '<em>Container</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CONTAINER_FEATURE_COUNT = org.palladiosimulator.pcm.repository.RepositoryPackage.COMPOSITE_COMPONENT_FEATURE_COUNT + 2;
+    int CONTAINER_FEATURE_COUNT = org.palladiosimulator.pcm.repository.RepositoryPackage.COMPOSITE_COMPONENT_FEATURE_COUNT + 4;
 
     /**
      * The meta object id for the '{@link kubernetesModel.repository.impl.PodImpl <em>Pod</em>}' class.
@@ -340,10 +358,10 @@ public interface RepositoryPackage extends EPackage {
     EClass getContainer();
 
     /**
-     * Returns the meta object for the reference '{@link kubernetesModel.repository.Container#getStandardLimit <em>Standard Limit</em>}'.
+     * Returns the meta object for the containment reference '{@link kubernetesModel.repository.Container#getStandardLimit <em>Standard Limit</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Standard Limit</em>'.
+     * @return the meta object for the containment reference '<em>Standard Limit</em>'.
      * @see kubernetesModel.repository.Container#getStandardLimit()
      * @see #getContainer()
      * @generated
@@ -351,15 +369,37 @@ public interface RepositoryPackage extends EPackage {
     EReference getContainer_StandardLimit();
 
     /**
-     * Returns the meta object for the reference '{@link kubernetesModel.repository.Container#getStandardRequest <em>Standard Request</em>}'.
+     * Returns the meta object for the containment reference '{@link kubernetesModel.repository.Container#getStandardRequest <em>Standard Request</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Standard Request</em>'.
+     * @return the meta object for the containment reference '<em>Standard Request</em>'.
      * @see kubernetesModel.repository.Container#getStandardRequest()
      * @see #getContainer()
      * @generated
      */
     EReference getContainer_StandardRequest();
+
+    /**
+     * Returns the meta object for the containment reference list '{@link kubernetesModel.repository.Container#getAdditionalRequests <em>Additional Requests</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>Additional Requests</em>'.
+     * @see kubernetesModel.repository.Container#getAdditionalRequests()
+     * @see #getContainer()
+     * @generated
+     */
+    EReference getContainer_AdditionalRequests();
+
+    /**
+     * Returns the meta object for the containment reference list '{@link kubernetesModel.repository.Container#getAdditionalLimits <em>Additional Limits</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>Additional Limits</em>'.
+     * @see kubernetesModel.repository.Container#getAdditionalLimits()
+     * @see #getContainer()
+     * @generated
+     */
+    EReference getContainer_AdditionalLimits();
 
     /**
      * Returns the meta object for class '{@link kubernetesModel.repository.Pod <em>Pod</em>}'.
@@ -415,7 +455,7 @@ public interface RepositoryPackage extends EPackage {
         EClass CONTAINER = eINSTANCE.getContainer();
 
         /**
-         * The meta object literal for the '<em><b>Standard Limit</b></em>' reference feature.
+         * The meta object literal for the '<em><b>Standard Limit</b></em>' containment reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
@@ -423,12 +463,28 @@ public interface RepositoryPackage extends EPackage {
         EReference CONTAINER__STANDARD_LIMIT = eINSTANCE.getContainer_StandardLimit();
 
         /**
-         * The meta object literal for the '<em><b>Standard Request</b></em>' reference feature.
+         * The meta object literal for the '<em><b>Standard Request</b></em>' containment reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
          */
         EReference CONTAINER__STANDARD_REQUEST = eINSTANCE.getContainer_StandardRequest();
+
+        /**
+         * The meta object literal for the '<em><b>Additional Requests</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference CONTAINER__ADDITIONAL_REQUESTS = eINSTANCE.getContainer_AdditionalRequests();
+
+        /**
+         * The meta object literal for the '<em><b>Additional Limits</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference CONTAINER__ADDITIONAL_LIMITS = eINSTANCE.getContainer_AdditionalLimits();
 
         /**
          * The meta object literal for the '{@link kubernetesModel.repository.impl.PodImpl <em>Pod</em>}' class.

@@ -104,22 +104,13 @@ public interface K8sconceptsPackage extends EPackage {
     int DEPLOYMENT__POD_REFERENCE = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Allocated Pods</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DEPLOYMENT__ALLOCATED_PODS = EntityPackage.ENTITY_FEATURE_COUNT + 2;
-
-    /**
      * The number of structural features of the '<em>Deployment</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DEPLOYMENT_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+    int DEPLOYMENT_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
     /**
      * The meta object id for the '{@link kubernetesModel.k8sconcepts.impl.AbstractK8sRequestLimitImpl <em>Abstract K8s Request Limit</em>}' class.
@@ -260,34 +251,6 @@ public interface K8sconceptsPackage extends EPackage {
     int K8S_ADDITIONAL_REQUEST_LIMIT_FEATURE_COUNT = ABSTRACT_K8S_REQUEST_LIMIT_FEATURE_COUNT + 1;
 
     /**
-     * The meta object id for the '{@link kubernetesModel.k8sconcepts.impl.RequestsLimitsRepositoryImpl <em>Requests Limits Repository</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see kubernetesModel.k8sconcepts.impl.RequestsLimitsRepositoryImpl
-     * @see kubernetesModel.k8sconcepts.impl.K8sconceptsPackageImpl#getRequestsLimitsRepository()
-     * @generated
-     */
-    int REQUESTS_LIMITS_REPOSITORY = 4;
-
-    /**
-     * The feature id for the '<em><b>Requests Limits Repo</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int REQUESTS_LIMITS_REPOSITORY__REQUESTS_LIMITS_REPO = 0;
-
-    /**
-     * The number of structural features of the '<em>Requests Limits Repository</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int REQUESTS_LIMITS_REPOSITORY_FEATURE_COUNT = 1;
-
-    /**
      * The meta object id for the '{@link kubernetesModel.k8sconcepts.impl.DeploymentsImpl <em>Deployments</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -295,7 +258,7 @@ public interface K8sconceptsPackage extends EPackage {
      * @see kubernetesModel.k8sconcepts.impl.K8sconceptsPackageImpl#getDeployments()
      * @generated
      */
-    int DEPLOYMENTS = 5;
+    int DEPLOYMENTS = 4;
 
     /**
      * The feature id for the '<em><b>Deployment Instances</b></em>' containment reference list.
@@ -347,17 +310,6 @@ public interface K8sconceptsPackage extends EPackage {
      * @generated
      */
     EReference getDeployment_PodReference();
-
-    /**
-     * Returns the meta object for the containment reference list '{@link kubernetesModel.k8sconcepts.Deployment#getAllocatedPods <em>Allocated Pods</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the containment reference list '<em>Allocated Pods</em>'.
-     * @see kubernetesModel.k8sconcepts.Deployment#getAllocatedPods()
-     * @see #getDeployment()
-     * @generated
-     */
-    EReference getDeployment_AllocatedPods();
 
     /**
      * Returns the meta object for class '{@link kubernetesModel.k8sconcepts.AbstractK8sRequestLimit <em>Abstract K8s Request Limit</em>}'.
@@ -421,27 +373,6 @@ public interface K8sconceptsPackage extends EPackage {
      * @generated
      */
     EAttribute getK8sAdditionalRequestLimit_Specification();
-
-    /**
-     * Returns the meta object for class '{@link kubernetesModel.k8sconcepts.RequestsLimitsRepository <em>Requests Limits Repository</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Requests Limits Repository</em>'.
-     * @see kubernetesModel.k8sconcepts.RequestsLimitsRepository
-     * @generated
-     */
-    EClass getRequestsLimitsRepository();
-
-    /**
-     * Returns the meta object for the containment reference list '{@link kubernetesModel.k8sconcepts.RequestsLimitsRepository#getRequestsLimitsRepo <em>Requests Limits Repo</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the containment reference list '<em>Requests Limits Repo</em>'.
-     * @see kubernetesModel.k8sconcepts.RequestsLimitsRepository#getRequestsLimitsRepo()
-     * @see #getRequestsLimitsRepository()
-     * @generated
-     */
-    EReference getRequestsLimitsRepository_RequestsLimitsRepo();
 
     /**
      * Returns the meta object for class '{@link kubernetesModel.k8sconcepts.Deployments <em>Deployments</em>}'.
@@ -513,14 +444,6 @@ public interface K8sconceptsPackage extends EPackage {
         EReference DEPLOYMENT__POD_REFERENCE = eINSTANCE.getDeployment_PodReference();
 
         /**
-         * The meta object literal for the '<em><b>Allocated Pods</b></em>' containment reference list feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EReference DEPLOYMENT__ALLOCATED_PODS = eINSTANCE.getDeployment_AllocatedPods();
-
-        /**
          * The meta object literal for the '{@link kubernetesModel.k8sconcepts.impl.AbstractK8sRequestLimitImpl <em>Abstract K8s Request Limit</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
@@ -573,24 +496,6 @@ public interface K8sconceptsPackage extends EPackage {
          * @generated
          */
         EAttribute K8S_ADDITIONAL_REQUEST_LIMIT__SPECIFICATION = eINSTANCE.getK8sAdditionalRequestLimit_Specification();
-
-        /**
-         * The meta object literal for the '{@link kubernetesModel.k8sconcepts.impl.RequestsLimitsRepositoryImpl <em>Requests Limits Repository</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see kubernetesModel.k8sconcepts.impl.RequestsLimitsRepositoryImpl
-         * @see kubernetesModel.k8sconcepts.impl.K8sconceptsPackageImpl#getRequestsLimitsRepository()
-         * @generated
-         */
-        EClass REQUESTS_LIMITS_REPOSITORY = eINSTANCE.getRequestsLimitsRepository();
-
-        /**
-         * The meta object literal for the '<em><b>Requests Limits Repo</b></em>' containment reference list feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EReference REQUESTS_LIMITS_REPOSITORY__REQUESTS_LIMITS_REPO = eINSTANCE.getRequestsLimitsRepository_RequestsLimitsRepo();
 
         /**
          * The meta object literal for the '{@link kubernetesModel.k8sconcepts.impl.DeploymentsImpl <em>Deployments</em>}' class.

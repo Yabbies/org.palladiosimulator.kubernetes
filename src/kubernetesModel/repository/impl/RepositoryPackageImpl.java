@@ -173,6 +173,24 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
      * <!-- end-user-doc -->
      * @generated
      */
+    public EReference getContainer_AdditionalRequests() {
+        return (EReference)containerEClass.getEStructuralFeatures().get(2);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getContainer_AdditionalLimits() {
+        return (EReference)containerEClass.getEStructuralFeatures().get(3);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EClass getPod() {
         return podEClass;
     }
@@ -217,6 +235,8 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
         containerEClass = createEClass(CONTAINER);
         createEReference(containerEClass, CONTAINER__STANDARD_LIMIT);
         createEReference(containerEClass, CONTAINER__STANDARD_REQUEST);
+        createEReference(containerEClass, CONTAINER__ADDITIONAL_REQUESTS);
+        createEReference(containerEClass, CONTAINER__ADDITIONAL_LIMITS);
 
         podEClass = createEClass(POD);
         createEReference(podEClass, POD__CONTAINERS);
@@ -260,8 +280,10 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
         // Initialize classes and features; add operations and parameters
         initEClass(containerEClass, kubernetesModel.repository.Container.class, "Container", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getContainer_StandardLimit(), theK8sconceptsPackage.getK8sStandardRequestLimit(), null, "standardLimit", null, 0, 1, kubernetesModel.repository.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEReference(getContainer_StandardRequest(), theK8sconceptsPackage.getK8sStandardRequestLimit(), null, "standardRequest", null, 0, 1, kubernetesModel.repository.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getContainer_StandardLimit(), theK8sconceptsPackage.getK8sStandardRequestLimit(), null, "standardLimit", null, 0, 1, kubernetesModel.repository.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getContainer_StandardRequest(), theK8sconceptsPackage.getK8sStandardRequestLimit(), null, "standardRequest", null, 0, 1, kubernetesModel.repository.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getContainer_AdditionalRequests(), theK8sconceptsPackage.getAbstractK8sRequestLimit(), null, "additionalRequests", null, 0, -1, kubernetesModel.repository.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getContainer_AdditionalLimits(), theK8sconceptsPackage.getAbstractK8sRequestLimit(), null, "additionalLimits", null, 0, -1, kubernetesModel.repository.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(podEClass, Pod.class, "Pod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getPod_Containers(), this.getContainer(), null, "containers", null, 0, -1, Pod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
